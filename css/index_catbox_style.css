@@ -1,0 +1,119 @@
+.maddox-catbox
+{
+    position: absolute;
+    top: 1000px;
+    left: 200px;
+    width: 2000px;
+    height: 500px;
+}
+
+.maddox-header
+{
+    position: absolute;
+    top: 1520px;
+    left: 670px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.maddox-tagline
+{
+    position: absolute;
+    top: 1600px;
+    left: 780px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.maddox-btn
+{
+    list-style: none;
+}
+
+.maddox-btn li
+{
+    display: inline-block;
+}
+
+.maddox-btn li a
+{
+    position: absolute;
+    top: 1670px;
+    left: 820px;
+    border: 0.5px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 15px 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: inherit;
+}
+
+.maddox-btn li a:hover
+{
+    background-color: black;
+    color: white;
+    transition: all .5s ease;
+}
+
+.hensley-catbox
+{
+    position: absolute;
+    top: 1850px;
+    left: 200px;
+    width: 1500px;
+    height: 600px;
+}
+
+.hensley-header
+{
+    position: absolute;
+    top: 2500px;
+    left: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.hensley-tagline
+{
+    position: absolute;
+    top: 2580px;
+    left: 810px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.hensley-btn
+{
+    list-style: none;
+}
+
+.hensley-btn li
+{
+    display: inline-block;
+}
+
+.hensley-btn li a
+{
+    position: absolute;
+    top: 2650px;
+    left: 810px;
+    border: 0.5px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 15px 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: inherit;
+}
+
+.hensley-btn li a:hover
+{
+    background-color: black;
+    color: white;
+    transition: all .5s ease;
+}

@@ -1,0 +1,42 @@
+.side-bar
+{
+    background-color: black;
+    position: relative;
+    top: 115px;
+    left: 240px;
+    width: 300px;
+    height: 2500px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.side-bar h1
+{
+    color: white;   
+    position: absolute;
+    margin: 10%;
+}
+
+.side-bar a
+{
+    color: white;
+    position: relative;
+    padding: 5%;
+    left: 10%;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.side-bar a:hover
+{
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    transition: all 0.5s ease;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
