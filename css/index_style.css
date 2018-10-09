@@ -65,7 +65,7 @@
 .user-menu
 {
     width: 200px;
-    float: left;
+    float: right;
     margin-top: 40px;
 }
 
@@ -100,7 +100,8 @@
 
 .main-nav
 {
-    float: right;
+    /* float: left; */
+    text-align: center;
     list-style: none;
     margin-top: 45px;
 }
@@ -137,12 +138,7 @@
 
 .image-display
 {
-    border: 1px solid;
-    border-top-color: white;
-    border-bottom-color: white;
-    border-left-color: black;
-    border-right-color: black;
-    display: block;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
