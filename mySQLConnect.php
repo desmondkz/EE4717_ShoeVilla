@@ -1,4 +1,5 @@
 <?php 
+    session_start();
 
     $username = "";
     $email = "";
@@ -39,6 +40,9 @@
                     VALUES ('$username', '$email', '$password')";
 
         mysqli_query($db, $sql);
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now logged in!";
+        header('location: index.php'); // redirect to homepage 
     }
 
 
