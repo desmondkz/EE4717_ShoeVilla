@@ -20,4 +20,4 @@ insert into orders values
     (NULL, 1, 3, 888.88, '2018-10-26');
 
 insert into users values
-    (NULL, 'zzhang034', '123456');
+    (NULL, 'zzhang034', 'zzhang034@e.ntu.edu.sg', '123456');
