@@ -1,0 +1,19 @@
+.sales-catbox
+{
+    margin-left: auto;
+    margin-top: 80px;
+    margin-right: auto;
+    width: 60%;
+}
+ul.myProduct{
+    display: table;
+    width:100%;
+    text-align: center;
+}
+
+ul.myProduct > li{
+    display: inline-table;
+    width: 33%;
+    position:relative;
+    float: left;
+}

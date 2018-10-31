@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ShoeVilla | Women</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/index_style.css" rel="stylesheet" type="text/css">
+    <link href="css/women_catbox_style.css" rel="stylesheet" type="text/css">
+    <link href="css/side_bar.css" rel="stylesheet" type="text/css">
+    <!--Website Tab Icon-->
+    <link rel="shortcut icon" href="ShoeVillaBanner.ico">
+</head>
+
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="subheader">
+                <p class="text" align="center">FREE INTERNATIONAL STANDARD SHIPPING ON ORDERS OF $200+</p>
+            </div>
+            <!--LOGO-->
+            <div class="logo">
+                <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
+            </div>
+            <!--Search Bar-->
+            <!-- <div class="search">
+                <form action="">
+                    <input class="search-area" type="text" name="text" placeholder="Search">
+                    <input class="search-btn" type="submit" name="submit" value="SEARCH">
+                </form>
+            </div> -->
+            <!--User Menu-->
+            <div class="user-menu">
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.php">Login</a></li>
+            </div>
+            <!--Main Navigation-->
+            <ul class="main-nav">
+                <li><a href="index.html"> HOME                       </a></li>
+                <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
+                <li><a href="men.php"> MEN                          </a></li>
+                <li class="active"><a href="women.php"> WOMEN       </a></li>
+                <li><a href="sales.php"> SALES                      </a></li>
+            </ul>
+            <!--Category Boxes-->
+            <div class="women-catbox">
+                <?php
+                    include 'womenProducts.php';
+                ?>
+            </div>
+        </div>
+
+    <!--Footer Area-->
+    <div class="footer">
+        <div class="footer_sub_1">
+            <p><a href=""> STORE LOCATOR </a></p><br><br>
+            <p><a href=""> FINA A STORE </a></p><br>
+            <p><a href=""> RETURN LOCATIONS </a></p>
+        </div>
+        <div class="footer_sub_2">
+            <p><a href=""> CLIENT SERVICES</a></p><br><br>
+            <p><a href=""> HELP & FAQ </a></p><br>
+            <p><a href=""> SIZE CHART </a></p><br>
+            <p><a href=""> CONTACT US </a></p><br>
+            <p><a href=""> SITE MAP </a></p>
+        </div>
+        <div class="footer_sub_3">
+            <p><a href=""> GIVE A GIFT </a></p><br><br>
+            <p><a href=""> CHECK BALANCE </a></p><br>
+            <p><a href=""> GIFT CARD </a></p><br>
+            <p><a href=""> CIFTNOW </a></p>
+        </div>
+        <div class="footer_sub_4">
+            <p><a href=""> QUICK LINK </a></p><br><br>
+            <p><a href=""> OUR APP </a></p><br>
+            <p><a href=""> LAUNCH RESERVATION </a></p><br>
+            <p><a href=""> AFFILIATES </a></p><br>
+            <p><a href=""> FIT GUARANTEE </a></p>
+        </div>
+        <div class="footer_social">
+            <a href=""><img src="images/social.PNG" style="width:200px;height:40px;"></a>
+        </div>
+        <div class="footer_copyright">
+            <p>© 2018 ShoeVilla.com, Inc. All Rights Reserved</p>
+        </div>
+    </div>
+    </header>
+</body>
+</html>
