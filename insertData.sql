@@ -20,7 +20,7 @@ insert into products values
     (NULL, 'female', 1, 0, 988.88, 'new female shoes', 'women_17.jpg','TRIPLE S TRAINERS'),
     (NULL, 'female', 1, 0, 988.88, 'new female shoes', 'women_18.jpg','TRIPLE S TRAINERS'),
     (NULL, 'female', 1, 0, 988.88, 'new female shoes', 'women_19.jpg','TRIPLE S TRAINERS'),
-    (NULL, 'female', 1, 0, 988.88, 'new female shoes', 'women_20.jpg','TRIPLE S TRAINERS');
+    (NULL, 'female', 1, 0, 988.88, 'new female shoes', 'women_20.jpg','TRIPLE S TRAINERS'),
     (NULL, 'male', 1, 0, 988.88, 'new male shoes', 'men_1.jpg' ,'SPEED TRAINERS'),
     (NULL, 'male', 1, 0, 988.88, 'new male shoes', 'men_2.jpg' ,'SPEED TRAINERS'),
     (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_3.jpg' ,'SPEED TRAINERS'),
