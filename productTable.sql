@@ -19,8 +19,8 @@ create table orders
 
 create table users
 (
-    userId int unsigned not null auto_increment primary key,
-    userName varchar(10) not null,
+    userid int unsigned not null auto_increment primary key,
+    username varchar(10) not null,
     email VARCHAR(255) not null,
     password varchar(10) not null
 )
