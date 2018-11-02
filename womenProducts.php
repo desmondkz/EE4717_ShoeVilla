@@ -1,9 +1,10 @@
 <?php
-$servername = 'localhost';
-$username = 'f34ee';
-$password = 'f34ee';
-$dbname ='f34ee';
-$port = 8889;
+$servername = "localhost";
+// $username = "f34ee";
+// $password = "f34ee";
+$username = "root";
+$password = "root";
+$dbname ="f34ee";
 
 // Create connection
 $conn = mysqli_connect( $servername, 

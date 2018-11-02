@@ -41,10 +41,7 @@ insert into products values
     (NULL, 'male', 1, 0, 988.88, 'new male shoes', 'men_18.jpg','TRIPLE S TRAINERS'),
     (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_19.jpg','SPEED TRAINERS'),
     (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_20.jpg','SPEED TRAINERS'),
-    (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_21.jpg','SPEED TRAINERS'),
-    (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_22.jpg','TRIPLE S TRAINERS'),
-    (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_23.jpg','TRIPLE S TRAINERS'),
-    (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_24.jpg','TRIPLE S TRAINERS');
+    (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_21.jpg','SPEED TRAINERS');
 
 insert into orders values
     (NULL, 1, 3, 888.88, '2018-10-26');

@@ -6,7 +6,8 @@ create table products
   price float(6.2) not null,
   introduction varchar(500),
   photos varchar(50) not null,
-  name varchar(50) not null
+  name varchar(50) not null,
+  color varchar(20) not null
 );
 
 create table orders
