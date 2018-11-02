@@ -1,7 +1,7 @@
 .maddox-catbox
 {
-    position: absolute;
-    top: 1000px;
+    position: relative;
+    top: 50px;
     left: 200px;
     width: 1530px;
     height: 500px;
@@ -9,9 +9,10 @@
 
 .maddox-header
 {
-    position: absolute;
-    top: 1520px;
-    left: 670px;
+    position: relative;
+    top: 50px;
+    left: 500px;
+    width: 40%; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bold;
@@ -19,9 +20,10 @@
 
 .maddox-tagline
 {
-    position: absolute;
-    top: 1600px;
-    left: 780px;
+    position: relative;
+    top: 100px;
+    left: 620px;
+    width: 25%; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     font-weight: normal;
@@ -39,9 +41,9 @@
 
 .maddox-btn li a
 {
-    position: absolute;
-    top: 1670px;
-    left: 820px;
+    position: relative;
+    top: 150px;
+    left: 665px;
     border: 0.5px solid black;
     color: black;
     text-decoration: none;
@@ -58,10 +60,14 @@
     transition: all .5s ease;
 }
 
-.hensley-catbox
+
+
+
+
+/*.hensley-catbox
 {
-    position: absolute;
-    top: 1850px;
+    position: relative;
+    top: 400px;
     left: 200px;
     width: 1500px;
     height: 600px;
@@ -69,9 +75,10 @@
 
 .hensley-header
 {
-    position: absolute;
-    top: 2500px;
-    left: 700px;
+    position: relative;
+    top: 50px;
+    left: 500px;
+    width: 35%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bold;
@@ -79,9 +86,10 @@
 
 .hensley-tagline
 {
-    position: absolute;
-    top: 2580px;
-    left: 810px;
+    position: relative;
+    top: 100px;
+    left: 620px;
+    width: 20%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     font-weight: normal;
@@ -99,9 +107,9 @@
 
 .hensley-btn li a
 {
-    position: absolute;
-    top: 2650px;
-    left: 810px;
+    position: relative;
+    top: 150px;
+    left: 640px;
     border: 0.5px solid black;
     color: black;
     text-decoration: none;
@@ -116,4 +124,4 @@
     background-color: black;
     color: white;
     transition: all .5s ease;
-}
+}*/
