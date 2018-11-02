@@ -50,5 +50,40 @@
             </div>
         </div>
     </header>
+
+    <!--Footer Area-->
+    <div class="footer">
+        <div class="footer_sub_1">
+            <p><a href=""> STORE LOCATOR </a></p><br><br>
+            <p><a href=""> FINA A STORE </a></p><br>
+            <p><a href=""> RETURN LOCATIONS </a></p>
+        </div>
+        <div class="footer_sub_2">
+            <p><a href=""> CLIENT SERVICES</a></p><br><br>
+            <p><a href=""> HELP & FAQ </a></p><br>
+            <p><a href=""> SIZE CHART </a></p><br>
+            <p><a href=""> CONTACT US </a></p><br>
+            <p><a href=""> SITE MAP </a></p>
+        </div>
+        <div class="footer_sub_3">
+            <p><a href=""> GIVE A GIFT </a></p><br><br>
+            <p><a href=""> CHECK BALANCE </a></p><br>
+            <p><a href=""> GIFT CARD </a></p><br>
+            <p><a href=""> CIFTNOW </a></p>
+        </div>
+        <div class="footer_sub_4">
+            <p><a href=""> QUICK LINK </a></p><br><br>
+            <p><a href=""> OUR APP </a></p><br>
+            <p><a href=""> LAUNCH RESERVATION </a></p><br>
+            <p><a href=""> AFFILIATES </a></p><br>
+            <p><a href=""> FIT GUARANTEE </a></p>
+        </div>
+        <div class="footer_social">
+            <a href=""><img src="images/social.PNG" style="width:200px;height:40px;"></a>
+        </div>
+        <div class="footer_copyright">
+            <p>© 2018 ShoeVilla.com, Inc. All Rights Reserved</p>
+        </div>
+    </div>
 </body>
 </html>
