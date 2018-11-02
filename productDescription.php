@@ -84,7 +84,7 @@
                     <div>
                         <ul class='sizeSelector'>
                         <li>
-                            <input type="radio" id="36" value='36' name="size" />
+                            <input type="radio" id="36" value='36' name="size" checked/>
                             <label for="36">36</label>
                         </li>
                         <li>

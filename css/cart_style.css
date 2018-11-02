@@ -1,0 +1,56 @@
+.image{
+    width: 136px;
+    height: 136px;
+}
+#productTitle{
+    text-align: left;
+}
+
+.productList{
+    margin-left: 10px;
+}
+.itemImage{
+    width: 15%;
+}
+
+#quantity{
+    width:45px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 40%;
+    margin: 20px 32%;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    text-align: left;    
+}
+.h1-cart{
+    margin-left: 32%;
+    margin-top: 70px;
+}
+
+.removeItem{
+    margin-top: 70px;
+}
+
+.subtotalRow{
+    height: 45px;
+}
+.checkoutRow{
+    text-align: center;
+    height: 45px;
+}
+.checkoutButton{
+    height: 40px;
+    width: 250px;
+    background-color: black;
+}
+.checkoutText{
+    color:white;
+}
