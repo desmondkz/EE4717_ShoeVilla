@@ -4,6 +4,5 @@
             <p><?php echo $error; ?></p>
         <?php endforeach ?>
     </div>
-
 <?php endif ?>
 

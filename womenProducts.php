@@ -1,14 +1,13 @@
 <?php
-$servername = "localhost";
-// $username = "f34ee";
-// $password = "f34ee";
-$username = "root";
-$password = "root";
-$dbname ="f34ee";
+$servername = 'localhost';
+$user = 'f34ee';
+$password = 'f34ee';
+$dbname ='f34ee';
+$port = 8889;
 
 // Create connection
 $conn = mysqli_connect( $servername, 
-                        $username, 
+                        $user, 
                         $password, 
                         $dbname,
                         $port

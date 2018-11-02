@@ -5,7 +5,7 @@
 
 body {
     font-size: 120%;
-    background: #F8F8FF;
+    background: white;
 }
 
 .header {
@@ -14,7 +14,7 @@ body {
     color: white;
     background: black;
     text-align: center;
-    border: 1px solid #B0C4DE;
+    border: 1px solid gray;
     border-bottom: none;
     border-radius: 10px 10px 0px 0px;
     padding: 20px;
@@ -24,7 +24,7 @@ form {
     width: 30%;
     margin: 0px auto;
     padding: 20px;
-    border: 1px solid #B0C4DE;
+    border: 1px solid gray;
     background: white;
     border-radius: 0px 0px 10px 10px;
 }
