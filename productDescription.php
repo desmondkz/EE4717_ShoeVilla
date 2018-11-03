@@ -59,11 +59,12 @@ if (isset($_POST['productId'])) {
                 <li><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
+                        echo '&nbsp &nbsp';
                         echo $_SESSION['username'];
                         echo '<li><a href="logout.php">Logout</a></li>';
                     }
                     else {
-                        echo '<strong>Guest</strong>';
+                        echo '&nbsp Guest';
                         echo '<li><a href="login.php">Login</a></li>';
                     }
                 ?>
@@ -84,7 +85,7 @@ if (isset($_POST['productId'])) {
                     // var_dump($_GET);
                     echo "
                     <div class='details' id='left'>
-                    <h3> Details </h3>
+                    <h2> DETAILS </h2>
                     <br>
                     <p>                        
                         Cuffed knit sock with Balenciaga logo<br>
@@ -96,7 +97,7 @@ if (isset($_POST['productId'])) {
                         10 mm / 0,39 inches arch<br>
                         Made in Italy<br>
                         Wipe with a soft clean cloth<br>
-                        Composition: <br>
+                        Composition:<br>
                         80% Polyamide, 20% Elastan<br>
                     </p>
                 </div>
@@ -113,7 +114,8 @@ if (isset($_POST['productId'])) {
                     <br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                     
-                    <p>Color: Yellow</p>";
+                    <p>Color: Yellow</p>
+                    <br>";
                 echo "<form action='".$_SERVER['REQUEST_URI']."' method='post'>";
                 // echo "<form action='cartSession.php' method='get'>";
                 echo "<p>Sizes:</p>
