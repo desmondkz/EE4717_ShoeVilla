@@ -48,26 +48,27 @@ if (isset($_POST['productId'])) {
             <div class="subheader">
                 <p class="text" align="center">FREE INTERNATIONAL STANDARD SHIPPING ON ORDERS OF $200+</p>
             </div>
+
             <!--LOGO-->
             <div class="logo">
                 <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
             </div>
-            <!--Search Bar-->
-            <!-- <div class="search">
-                <form action="">
-                    <input class="search-area" type="text" name="text" placeholder="Search">
-                    <input class="search-btn" type="submit" name="submit" value="SEARCH">
-                </form>
-            </div> -->
+
             <!--User Menu-->
             <div class="user-menu">
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="index.php?logout='1'">Logout</a></li>
-                
-                <?php if (isset($_SESSION['username'])): ?>
-                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
-                <?php endif ?>
+                <?php    
+                    if (isset($_SESSION['username'])) {
+                        echo $_SESSION['username'];
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<strong>Guest</strong>';
+                        echo '<li><a href="login.php">Login</a></li>';
+                    }
+                ?>
             </div>
+
             <!--Main Navigation-->
             <ul class="main-nav">
                 <li><a href="index.php"> HOME                       </a></li>
@@ -76,6 +77,7 @@ if (isset($_POST['productId'])) {
                 <li class="active"><a href="women.php"> WOMEN       </a></li>
                 <li><a href="sales.php"> SALES                      </a></li>
             </ul>
+
             <!--Category Boxes-->
             <div class='productDetails' id='container'>
                 <?php

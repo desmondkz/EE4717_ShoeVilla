@@ -32,25 +32,30 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
             <div class="subheader">
                 <p class="text" align="center">FREE INTERNATIONAL STANDARD SHIPPING ON ORDERS OF $200+</p>
             </div>
+
             <!--Logo-->
             <div class="logo">
                 <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
             </div>
-            <!--Search Bar-->
-            <!-- <div class="search">
-                <form action="">
-                    <input class="search-area" type="text" name="text" placeholder="Search">
-                    <input class="search-btn" type="submit" name="submit" value="SEARCH">
-                </form>
-            </div> -->
+
             <!--User Menu-->
             <div class="user-menu">
                 <li class="active"><a href="cart.php">Cart</a></li>
-                <li><a href="login.php">Login</a></li>
+                <?php    
+                    if (isset($_SESSION['username'])) {
+                        echo $_SESSION['username'];
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<strong>Guest</strong>';
+                        echo '<li><a href="login.php">Login</a></li>';
+                    }
+                ?>
             </div>
+
             <!--Main Navigation-->
             <ul class="main-nav">
-                <li><a href="index.html"> HOME                       </a></li>
+                <li><a href="index.php"> HOME                       </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
                 <li><a href="women.php"> WOMEN                      </a></li>

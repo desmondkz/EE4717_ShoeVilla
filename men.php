@@ -1,4 +1,4 @@
-<?php include('mySQLConnect.php'); 
+<?php //include('mySQLConnect.php'); 
     session_start();
     // if user is not logged in, user cannot access this page
     // if (empty($_SESSION['username'])) {
@@ -51,11 +51,16 @@
             <!--User Menu-->
             <div class="user-menu">
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="index.php?logout='1'">Logout</a></li>
-                
-                <?php if (isset($_SESSION['username'])): ?>
-                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
-                <?php endif ?>
+                <?php    
+                    if (isset($_SESSION['username'])) {
+                        echo $_SESSION['username'];
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<strong>Guest</strong>';
+                        echo '<li><a href="login.php">Login</a></li>';
+                    }
+                ?>    
             </div>
 
             <!--Main Navigation-->

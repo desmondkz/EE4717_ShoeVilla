@@ -1,11 +1,18 @@
-<?php include('mySQLConnect.php'); 
+<?php //include 'mySQLConnect.php';
+
+    session_start();
+
+    //if (!isset($_SESSION['username'])) {
+        //echo 'Welcome guest!';
+    //}
+    //else {
+        //echo $_SESSION['username'];
+    //}
 
     // if user is not logged in, user cannot access this page
-    if (empty($_SESSION['username'])) {
-        header('location: login.php');
-    //  session_destroy();
-    //  session_start();
-    }
+    //if (empty($_SESSION['username'])) {
+        //header('location: login.php');
+    //}
 
 ?>
 <!doctype html>
@@ -46,12 +53,16 @@
             <!--User Menu-->
             <div class="user-menu">
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="index.php?logout='1'">Logout</a></li>
-                
-                <?php if (isset($_SESSION['username'])): ?>
-                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
-                <?php endif ?>
-
+                <?php    
+                    if (isset($_SESSION['username'])) {
+                        echo $_SESSION['username'];
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<strong>Guest</strong>';
+                        echo '<li><a href="login.php">Login</a></li>';
+                    }
+                ?>
             </div>
 
             <!--Main Navigation-->
@@ -82,19 +93,7 @@
                 </ul>
             </div>
 
-            <!--Hensley Hightop Category Box
-            <div class="hensley-catbox">
-                <a href="hensley.html">
-                    <img src="images/Product/M5.png">
-                </a>
-                <p class="hensley-header">HENSLEY HIGHTOP</p>
-                <p class="hensley-tagline">Trend with the originals.</p>
-                <ul class="hensley-btn">
-                    <li><a href="hensley.html"> SHOP HENSLEY HIGHTOP </a></li>
-                </ul>
-            </div>-->
-
-            </div>
+        </div>
     </header>
 
     <!--Footer Area-->
