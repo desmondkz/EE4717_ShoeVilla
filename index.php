@@ -3,6 +3,8 @@
     // if user is not logged in, user cannot access this page
     if (empty($_SESSION['username'])) {
         header('location: login.php');
+    //  session_destroy();
+    //  session_start();
     }
 
 ?>
@@ -21,16 +23,11 @@
 
 
 <body>
-
     <?php if (isset($_SESSION['success'])):   ?>
         <?php 
             echo $_SESSION['success'];
             unset($_SESSION['success']);
         ?>
-    <?php endif ?>
-
-    <?php if (isset($_SESSION['userName'])): ?>
-        <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
     <?php endif ?>
 
     <!--===Sub-header + Logo + Main Nav + Display Image + Category Boxes===-->
@@ -43,13 +40,18 @@
 
             <!--Logo-->
             <div class="logo">
-                <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
+                <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
             </div>
 
             <!--User Menu-->
             <div class="user-menu">
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="index.php?logout='1'">Logout</a></li>
+                
+                <?php if (isset($_SESSION['username'])): ?>
+                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
+                <?php endif ?>
+
             </div>
 
             <!--Main Navigation-->
