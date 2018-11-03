@@ -48,7 +48,7 @@
 
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.php">Cart</a></li>
                 <li><a href="index.php?logout='1'">Logout</a></li>
             </div>
 

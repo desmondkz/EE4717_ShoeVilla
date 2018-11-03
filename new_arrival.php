@@ -11,6 +11,7 @@
     <link href="css/side_bar.css" rel="stylesheet" type="text/css">
     <!--Website Tab Icon-->
     <link rel="shortcut icon" href="ShoeVillaBanner.ico">
+    <script type = "text/javascript" src="getProduct.js"></script>
 </head>
 
 
@@ -36,7 +37,7 @@
 
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.php">Cart</a></li>
                 <li><a href="login.php">Login</a></li>
             </div>
 

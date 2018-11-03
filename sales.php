@@ -32,7 +32,7 @@
             </div> -->
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.php">Cart</a></li>
                 <li><a href="login.php">Login</a></li>
             </div>
             <ul class="main-nav">
