@@ -80,6 +80,7 @@
                     <br><br>
                     
                     <p>Color: Yellow</p>
+                    <form action='cart.php' method='post'>
                     <p>Sizes:</p>
                     <div>
                         <ul class='sizeSelector'>
@@ -112,8 +113,9 @@
                     
                     <br>
                     <div class='submitButton'>
-                        <input type='button' class='submit' value='Add To Shopping Bag'>
+                        <input type='button' class='submit' alt='submit' value='Add To Shopping Bag'>
                     </div>
+                    </form>
                 </div>
                 </div>
                 ";

@@ -51,6 +51,22 @@ th {
     width: 250px;
     background-color: black;
 }
+.loginCheckoutButton{
+    height: 40px;
+    width: 250px;
+    background-color: black;
+}
+.loginCheckoutText{
+    height: 40px;
+    width: 250px;
+    background-color: black;
+}
 .checkoutText{
+    color:white;
+}
+.checkoutText{
+    color:white;
+}
+.loginCheckoutText{
     color:white;
 }

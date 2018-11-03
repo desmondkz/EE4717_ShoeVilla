@@ -54,6 +54,8 @@
                     <th class='sectionHeader' colspan='2'>Quantity</th>
                     <th class='sectionHeader'>Price</th>
                 </thead>
+                <?php 
+                ?>
                 <tbody>
                     <tr class='cartRow'>
                         <td class='itemImage'>
@@ -94,11 +96,18 @@
                             <button class='checkoutButton'>
                             <a href=''>
                                 <span class='checkoutText'>
-                                    PROCEED TO CHECKOUT
+                                    CHECKOUT
                                 </span>
                             </a>
-                        </button>
-                    
+                            </button>
+                            or
+                            <button class='loginCheckoutButton'>
+                            <a href=''>
+                                <span class='loginCheckoutText'>
+                                    LOGIN & CHECKOUT
+                                </span>
+                            </a>
+                            </button>
                         </td>
                         </tr>
                 </tbody>
