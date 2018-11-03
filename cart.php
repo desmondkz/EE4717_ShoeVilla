@@ -31,7 +31,7 @@
             </div> -->
             <!--User Menu-->
             <div class="user-menu">
-                <li class="active"><a href="cart.html">Cart</a></li>
+                <li class="active"><a href="login.php">Cart</a></li>
                 <li><a href="login.php">Login</a></li>
             </div>
             <!--Main Navigation-->

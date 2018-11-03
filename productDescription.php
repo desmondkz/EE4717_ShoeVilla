@@ -33,7 +33,7 @@
             </div> -->
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.php">Cart</a></li>
                 <li><a href="login.php">Login</a></li>
             </div>
             <!--Main Navigation-->
@@ -46,10 +46,10 @@
             </ul>
             <!--Category Boxes-->
             <div class='productDetails' id='container'>
-                <!-- <?php
-                    include 'womenProducts.php';
-                ?> -->
-                <div class="details" id='left'>
+                <?php
+                    // var_dump($_GET);
+                    echo "
+                    <div class='details' id='left'>
                     <h3> Details </h3>
                     <br>
                     <p>                        
@@ -68,14 +68,14 @@
                 </div>
                 <div>
                 <div class='productImage' id='center'>
-                    <img src="images/Product/women/men_1.jpg">
+                    <img src='images/Product/women/".$_GET['photo']."'>
                 </div>
                 <div class='descriptions' id='right'>
-                    <h3>SPEED TRAINERS</h3>
-                    <P>female new shoes</P>
+                    <h3>".$_GET['name']."</h3>
+                    <P>".$_GET['introduction']."</P>
                     <br>
                     <br>
-                    <h3>$988.0</h3>
+                    <h3>$".$_GET['price']."</h3>
                     <br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                     
@@ -84,42 +84,41 @@
                     <div>
                         <ul class='sizeSelector'>
                         <li>
-                            <input type="radio" id="36" value='36' name="size" checked/>
-                            <label for="36">36</label>
+                            <input type='radio' id='36' value='36' name='size' checked/>
+                            <label for='36'>36</label>
                         </li>
                         <li>
-                            <input type="radio" id="37" value="37" name="size" />
-                            <label for="37">37</label>
+                            <input type='radio' id='37' value='37' name='size' />
+                            <label for='37'>37</label>
                         </li>
                         <li>
-                            <input type="radio" id="38" value='38' name="size"/>
-                            <label for="38">38</label>
+                            <input type='radio' id='38' value='38' name='size'/>
+                            <label for='38'>38</label>
                         </li>
                         <li>
-                            <input type="radio" id="39" value='39' name="size" />
-                            <label for="39">39</label>
+                            <input type='radio' id='39' value='39' name='size' />
+                            <label for='39'>39</label>
                         </li>
                         <li>
-                            <input type="radio" id="40" value='40' name="size" />
-                            <label for="40">40</label>
+                            <input type='radio' id='40' value='40' name='size' />
+                            <label for='40'>40</label>
                         </li>
                         <li>
-                            <input type="radio" id="41" value='41' name="size" />
-                            <label for="41">41</label>
+                            <input type='radio' id='41' value='41' name='size' />
+                            <label for='41'>41</label>
                         </li>
                     </ul>
                     </div>
                     
                     <br>
                     <div class='submitButton'>
-                        <input type="button" class="submit" value='Add To Shopping Bag'>
+                        <input type='button' class='submit' value='Add To Shopping Bag'>
                     </div>
                 </div>
-                <!-- <div>
                 </div>
-                <div>
-                </div> -->
-                </div>
+                ";
+                ?>
+                
             </div>
         </div>
 

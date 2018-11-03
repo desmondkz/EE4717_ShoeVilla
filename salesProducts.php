@@ -1,16 +1,16 @@
 <?php
 $servername = 'localhost';
-$user = 'f34ee';
-$password = 'f34ee';
+$user = 'root';
+$password = 'root';
 $dbname ='f34ee';
-$port = 8889;
+// $port = 8889;
 
 // Create connection
 $conn = mysqli_connect( $servername, 
                         $user, 
                         $password, 
-                        $dbname,
-                        $port
+                        $dbname
+                        // $port
                     );
 
 // Check connection
@@ -27,9 +27,17 @@ echo " <ul class='myProduct'>";
 
 for ($i=0; $i <$num_results; $i++) {
     $row = $result->fetch_assoc();
+    
     echo "<li>";
     echo "<div>";
-    echo "<a href='productDescription.php'><img src='images/Product/women/".$row['photos']."' width='300' height='300'></a>";
+    echo "<form action='productDescription.php' method='get'>";
+    echo "<input name='productId' type='number' value='".$row['productId']."' hidden>";
+    echo "<input name='price' type='text' value='".$row['price']."' hidden>";
+    echo "<input name='introduction' type='text' value='".$row['introduction']."' hidden>";
+    echo "<input name='photo' type='text' value='".$row['photos']."' hidden>";
+    echo "<input name='name' type='text' value='".$row['name']."' hidden>";
+    echo "<input type='image' src='images/Product/women/".$row['photos']."' alt='Submit' width='300' height='300'>";
+    echo "</form>";
     echo "<center>";
     echo "<p style='font-weight:bold;'>".$row['name']."</p>";
     echo "<p>SHOEVILLA 2018</p>";
@@ -37,5 +45,6 @@ for ($i=0; $i <$num_results; $i++) {
     echo "</center>";
     echo "</div>";
     echo "</li>";
+
 }               
 ?>
