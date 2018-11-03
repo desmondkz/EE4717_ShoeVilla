@@ -20,8 +20,8 @@ create table orders
 
 create table users
 (
-    userid int unsigned not null auto_increment primary key,
-    username varchar(10) not null,
+    id int(10) not null auto_increment primary key,
+    username varchar(255) not null,
     email VARCHAR(255) not null,
-    password varchar(10) not null
-)
+    password varchar(255) not null
+)   ENGINE=InnoDB DEFAULT CHARSET=latin1;
