@@ -1,3 +1,7 @@
+<?php    
+    session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -22,7 +26,7 @@
             </div>
             <!--LOGO-->
             <div class="logo">
-                <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
+                <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
             </div>
             <!--Search Bar-->
             <!-- <div class="search">
@@ -33,12 +37,16 @@
             </div> -->
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="login.php">Cart</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="index.php?logout='1'">Logout</a></li>
+                
+                <?php if (isset($_SESSION['username'])): ?>
+                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
+                <?php endif ?>
             </div>
             <!--Main Navigation-->
             <ul class="main-nav">
-                <li><a href="index.html"> HOME                       </a></li>
+                <li><a href="index.php"> HOME                       </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
                 <li class="active"><a href="women.php"> WOMEN       </a></li>
