@@ -14,7 +14,8 @@
 }
 
 #quantity{
-    width:45px;
+    /* width:45px; */
+    margin-left: 20%;
 }
 
 table {
@@ -35,7 +36,7 @@ th {
     margin-top: 70px;
 }
 
-.removeItem{
+#removeItem{
     margin-top: 70px;
 }
 

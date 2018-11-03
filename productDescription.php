@@ -1,3 +1,31 @@
+<?php //catalog.php
+session_start();
+// unset($_SESSION['cart']);
+if (!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = array();
+}
+
+// var_dump($_POST);
+// var_dump($_SESSION['cart']);
+if (isset($_POST['productId'])) {
+    $id = $_POST['productId'];
+    $size = $_POST['size'];
+    // echo $_SESSION['cart'][$id][$size];
+	if(isset($_SESSION['cart'][$id]) and isset($_SESSION['cart'][$id][$size])){
+        $_SESSION['cart'][$id][$size] = (int)$_SESSION['cart'][$id][$size] + 1;
+//     //     $_SESSION['cart']['productId']['quantity'] = 2;
+    }else{
+        echo 'no record';
+        $_SESSION['cart'][$id]['price']=$_POST['price'];
+        $_SESSION['cart'][$id][$size]=$_POST['qty'];
+        $_SESSION['cart'][$id]['photo']=$_POST['photo'];
+        $_SESSION['cart'][$id]['name']=$_POST['name'];
+        // $_SESSION['cart'][$id]['qty']=$_POST['qty'];
+    }
+    // header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+    // exit();
+}
+?> 
 <!doctype html>
 <html>
 <head>
@@ -33,7 +61,7 @@
             </div> -->
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="login.php">Cart</a></li>
+                <li><a href="cart.php">Cart</a></li>
                 <li><a href="login.php">Login</a></li>
             </div>
             <!--Main Navigation-->
@@ -79,9 +107,10 @@
                     <br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                     
-                    <p>Color: Yellow</p>
-                    <form action='cart.php' method='post'>
-                    <p>Sizes:</p>
+                    <p>Color: Yellow</p>";
+                echo "<form action='".$_SERVER['REQUEST_URI']."' method='post'>";
+                // echo "<form action='cartSession.php' method='get'>";
+                echo "<p>Sizes:</p>
                     <div>
                         <ul class='sizeSelector'>
                         <li>
@@ -109,16 +138,26 @@
                             <label for='41'>41</label>
                         </li>
                     </ul>
-                    </div>
-                    
-                    <br>
-                    <div class='submitButton'>
-                        <input type='button' class='submit' alt='submit' value='Add To Shopping Bag'>
-                    </div>
+                    </div>";
+                    // $product = array($_GET['productId'],)
+                    echo "<br>
+                    <div class='submitButton'>";
+                    echo "<input name='productId' type='number' value='".$_GET['productId']."' hidden>";
+                    echo "<input name='price' type='text' value='".$_GET['price']."' hidden>";
+                    echo "<input name='introduction' type='text' value='".$_GET['introduction']."' hidden>";
+                    echo "<input name='photo' type='text' value='".$_GET['photo']."' hidden>";
+                    echo "<input name='name' type='text' value='".$_GET['name']."' hidden>";
+                    echo "<input name='qty' type='number' value='1' hidden>";
+                    echo "<input type='submit' class='submit' name='submit' value='Add To Shopping Bag'>";
+                    echo "</a>";
+                    echo "</div>
                     </form>
                 </div>
                 </div>
                 ";
+                
+                // var_dump($_SESSION['cart']);
+                // var_dump($_GET)
                 ?>
                 
             </div>

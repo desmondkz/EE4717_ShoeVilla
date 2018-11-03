@@ -1,3 +1,17 @@
+<?php  //cart.php
+session_start();
+if (!isset($_SESSION['cart'])){
+	$_SESSION['cart'] = array();
+}
+// var_dump($_POST);
+if (isset($_POST['id']) && isset($_POST['size'])) {
+    $id = $_POST['id'];
+    $size = $_POST['size'];
+	unset($_SESSION['cart'][$id][$size]);
+	header('location: ' . $_SERVER['PHP_SELF']);
+	exit();
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -31,7 +45,7 @@
             </div> -->
             <!--User Menu-->
             <div class="user-menu">
-                <li class="active"><a href="login.php">Cart</a></li>
+                <li class="active"><a href="cart.php">Cart</a></li>
                 <li><a href="login.php">Login</a></li>
             </div>
             <!--Main Navigation-->
@@ -47,50 +61,65 @@
 
     <div class='myCart'>
         <h1 class='h1-cart'>SHOPPING BAG</h1>
-        <form action='' method='post' name='cart' id='cartItemForm'>
             <table id='cartTable' class='itemList'>
                 <thead>
                     <th class='sectionHeader' id='productTitle' colspan='2'>Product</th>
                     <th class='sectionHeader' colspan='2'>Quantity</th>
                     <th class='sectionHeader'>Price</th>
                 </thead>
-                <?php 
-                ?>
                 <tbody>
-                    <tr class='cartRow'>
-                        <td class='itemImage'>
-                            <img class='image' src='images/Product/women/men_1.jpg'>
-                        </td>
-                        <td class='itemDetails'>
-                            <div class='productList'>
-                                <div class='name'>SPEED TRAINERS</div>
-                                <div class='id'>#1</div>
-                                <div class='color'>Yellow</div>
-                                <div class='size'>37</div>
-                            </div>
-                        </td>
-                        <td class='itemQuantity' colspan='2'>
-                            <div class='divQuantity'>
-                                <input type='number' id='quantity' name='quantity' min='1' value='1'>    
-                            </div>
-                            <button class='removeItem' type='submit' value='Remove' name='deleteProduct'>
-                                <span>
-                                    REMOVE
-                                </span>
-                            </button>
-                        </td>
-                        <td class='itemPrice' >
-                            <span class='price'>$999.00</span>
-                        </td>
-                    </tr>
-                    <tr class='subtotalRow'>
-                        <td class='subtotal' colspan='4'>
-                            SUBTOTAL
-                        </td>
-                        <td>
-                            $999.00
-                        </td>
-                    </tr>
+                    <?php 
+                    $total = 0;
+                    // echo "count:";
+                    // var_dump($_SESSION['cart']);
+                    for ($i=1; $i < 65; $i++){
+                        // $empty = $i;
+                        // $empty = $i+1;
+                        if(!empty($_SESSION['cart'][$i])){
+                            for($j=36; $j<42; $j++){
+                                if(!empty($_SESSION['cart'][$i][$j])){
+                                    $total = $total + $_SESSION['cart'][$i]['price'];
+                                    echo "<tr class='cartRow'>
+                                    <td class='itemImage'>
+                                        <img class='image' src='images/Product/women/".$_SESSION['cart'][$i]['photo']."'>
+                                    </td>
+                                    <td class='itemDetails'>
+                                        <div class='productList'>
+                                            <div class='name'>".$_SESSION['cart'][$i]['name']."</div>
+                                            <div class='id'>".$i."</div>
+                                            <div class='color'>Yellow</div>
+                                            <div class='size'>".$j."</div>
+                                        </div>
+                                    </td>
+                                    <td class='itemQuantity' colspan='2'>
+                                        <div class='divQuantity'>
+                                            <span id='quantity' value=''>".$_SESSION['cart'][$i][$j]."</span>    
+                                        </div>";
+                                    echo "<form action='".$_SERVER['PHP_SELF']."' method='post'>
+                                        <input name='id' type='number' value='".$i."' hidden>
+                                        <input name='size' type='number' value='".$j."' hidden>
+                                        <input type='submit' name='submit' class='submit' id='removeItem' value='remove'>
+                                        </button>
+                                        </form>";
+                                    echo "</td>
+                                    <td class='itemPrice' >
+                                        <span class='price'>$".number_format($_SESSION['cart'][$i]['price'],2)."</span>
+                                    </td>
+                                </tr>";    
+        
+                                }
+                                
+                            }
+                        }
+                    } 
+                    echo "<tr class='subtotalRow'>
+                    <td class='subtotal' colspan='4'>
+                        SUBTOTAL
+                    </td>
+                    <td>
+                        ".number_format($total,2)."
+                    </td>";
+                    ?>
                     <tr class='checkoutRow'>
                         <td colspan='5'>
                             <button class='checkoutButton'>
@@ -112,7 +141,6 @@
                         </tr>
                 </tbody>
             </table>
-        </form>
     </div>
 </body>
 </html>

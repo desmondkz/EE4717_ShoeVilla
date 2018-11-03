@@ -1,10 +1,18 @@
 <?php include('mySQLConnect.php'); 
-
+    session_start();
     // if user is not logged in, user cannot access this page
-    if (empty($_SESSION['username'])) {
-        header('location: login.php');
-    }
+    // if (empty($_SESSION['username'])) {
+    //     header('location: login.php');
+    // }
 
+    if (!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }
+    if (isset($_GET['buy'])) {
+        $_SESSION['cart'][] = $_GET['buy'];
+        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+        exit();
+    }
 ?>
 <!doctype html>
 <html>
