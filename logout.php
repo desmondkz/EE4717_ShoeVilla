@@ -19,22 +19,31 @@
 <center>
     <body>
         <div class="wrapper">
+            <!--Sub-header-->
             <div class="subheader">
                 <p class="text" align="center">FREE INTERNATIONAL STANDARD SHIPPING ON ORDERS OF $200+</p>
             </div>
+            <!--Logo-->
+            <div class="login-logo">
+                <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
+            </div>
             
-            <h1>Log out</h1>
+            <div class="logout">
+                <h1>Log out</h1>    
+            </div>
 
-            <?php 
-                if (!empty($old_user)) {
-                    echo 'You are now logged out. <br />';
-                }
-                else {
-                    // if they weren't logged in but came to this page somehow
-                    echo 'You were not logged in, so please log in first.';
-                }
-            ?>
-            <a href="index.php">Return to main page.</a>
+            <div class="logout">
+                <?php 
+                    if (!empty($old_user)) {
+                        echo 'You are now logged out. <br />';
+                    }
+                    else {
+                        // if they weren't logged in but came to this page somehow
+                        echo 'You were not logged in, so please log in first.';
+                    }
+                ?>
+                <a href="index.php">Return to main page.</a>
+            </div>
         </div>
     </body>
 </center>
