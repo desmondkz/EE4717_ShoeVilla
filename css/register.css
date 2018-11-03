@@ -9,6 +9,8 @@ body {
 }
 
 .header {
+    position: relative;
+    top: 200px;
     width: 30%;
     margin: 50px auto 0px;
     color: white;
@@ -21,6 +23,8 @@ body {
 }
 
 form {
+    position: relative;
+    top: 200px;
     width: 30%;
     margin: 0px auto;
     padding: 20px;
@@ -66,4 +70,22 @@ form {
     background: #F2DEDE;
     border-radius: 5px;
     text-align: left;
+}
+
+.logout {
+    margin: 25px;
+    width: 30%;
+    position: relative;
+    top: 200px;
+    left: 0px;
+    font-size: 120%;
+}
+
+.login-logo img{
+    position: relative;
+    top: 70px;
+    right: -710px;
+    width: 500px;
+    height: auto;
+    float: left;
 }
