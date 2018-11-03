@@ -30,10 +30,12 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Purchase Confirmation';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body    = 'Hi';
 
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
+
+?>
