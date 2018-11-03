@@ -15,8 +15,13 @@
 
 <body>
     <div class="wrapper">
+        <!--Sub-header-->
         <div class="subheader">
             <p class="text" align="center">FREE INTERNATIONAL STANDARD SHIPPING ON ORDERS OF $200+</p>
+        </div>
+        <!--Logo-->
+        <div class="login-logo">
+            <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
         </div>
 
         <div class="header">
