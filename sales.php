@@ -30,12 +30,12 @@
             
             <!--LOGO-->
             <div class="logo">
-                <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
+                <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
             </div>
 
             <!--User Menu-->
             <div class="user-menu">
-                <li><a href="caer.php">Cart</a></li>
+                <li><a href="cart.php">Cart</a></li>
                 <li><a href="index.php?logout='1'">Logout</a></li>
                 
                 <?php if (isset($_SESSION['username'])): ?>
