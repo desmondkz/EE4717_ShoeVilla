@@ -8,8 +8,8 @@
     
     // Create connection
     $conn = mysqli_connect( 'localhost',  
-                            'f34ee',    
-                            'f34ee', 
+                            'root',    
+                            'root', 
                             'f34ee',
                             8889
                         );

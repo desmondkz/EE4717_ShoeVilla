@@ -47,7 +47,7 @@
 
             <!--LOGO-->
             <div class="logo">
-                <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
+                <a href="index.php"><img src="ShoeVillaBanner.jpg"></a>
             </div>
 
             <!--User Menu-->
