@@ -1,3 +1,11 @@
+<?php include('mySQLConnect.php'); 
+
+    // if user is not logged in, user cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -15,6 +23,13 @@
 
 
 <body>
+    <?php if (isset($_SESSION['success'])):   ?>
+        <?php 
+            echo $_SESSION['success'];
+            unset($_SESSION['success']);
+        ?>
+    <?php endif ?>
+
     <header>
         <div class="wrapper">
             <div class="subheader">
@@ -26,23 +41,20 @@
                 <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
             </div>
 
-            <!--Search Bar-->
-            <!-- <div class="search">
-                <form action="">
-                    <input class="search-area" type="text" name="text" placeholder="Search">
-                    <input class="search-btn" type="submit" name="submit" value="SEARCH">
-                </form>
-            </div> -->
-
             <!--User Menu-->
             <div class="user-menu">
                 <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php?logout='1'">Logout</a></li>
+                
+                <?php if (isset($_SESSION['username'])): ?>
+                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
+                <?php endif ?>
+
             </div>
 
             <!--Main Navigation-->
             <ul class="main-nav">
-                <li><a href="index.html"> HOME                       </a></li>
+                <li><a href="index.php"> HOME                       </a></li>
                 <li class="active"><a href="new_arrival.php"> NEW ARRIVAL  </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
                 <li><a href="women.php"> WOMEN                      </a></li>

@@ -1,3 +1,11 @@
+<?php include('mySQLConnect.php'); 
+
+    // if user is not logged in, user cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -19,24 +27,26 @@
             <div class="subheader">
                 <p class="text" align="center">FREE INTERNATIONAL STANDARD SHIPPING ON ORDERS OF $200+</p>
             </div>
+            
             <!--LOGO-->
             <div class="logo">
                 <a href="index.html"><img src="ShoeVillaBanner.jpg"></a>
             </div>
-            <!--Search Bar-->
-            <!-- <div class="search">
-                <form action="">
-                    <input class="search-area" type="text" name="text" placeholder="Search">
-                    <input class="search-btn" type="submit" name="submit" value="SEARCH">
-                </form>
-            </div> -->
+
             <!--User Menu-->
             <div class="user-menu">
                 <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php?logout='1'">Logout</a></li>
+                
+                <?php if (isset($_SESSION['username'])): ?>
+                <p>&nbsp&nbsp<strong><?php echo $_SESSION['username']; ?></strong></p>
+                <?php endif ?>
+
             </div>
+            
+            <!--Main Navigation-->
             <ul class="main-nav">
-                <li><a href="index.html"> HOME                       </a></li>
+                <li><a href="index.php"> HOME                       </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
                 <li><a href="women.php"> WOMEN                      </a></li>
