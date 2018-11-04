@@ -132,20 +132,25 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                     <tr class='checkoutRow'>
                         <td colspan='5'>
                             <button class='checkoutButton'>
-                            <a href=''>
+                            <a href='billing.php'>
                                 <span class='checkoutText'>
                                     CHECKOUT
                                 </span>
                             </a>
                             </button>
-                            or
-                            <button class='loginCheckoutButton'>
-                            <a href=''>
-                                <span class='loginCheckoutText'>
-                                    LOGIN & CHECKOUT
-                                </span>
-                            </a>
-                            </button>
+                            <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo "
+                                or
+                                <button class='loginCheckoutButton'>
+                                <a href='login.php'>
+                                    <span class='loginCheckoutText'>
+                                        LOGIN & CHECKOUT
+                                    </span>
+                                </a>
+                                </button>";
+                            }
+                            ?>
                         </td>
                         </tr>
                 </tbody>
