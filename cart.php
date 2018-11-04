@@ -160,7 +160,7 @@ if (isset($_POST['update'])) {
                     ?>
                     <tr class='checkoutRow'>
                         <td colspan='5'>
-                            <button name="checkout"class='checkoutButton'>
+                            <button class='checkoutButton'>
                             <a href='billing.php'>
                                 <span class='checkoutText'>
                                     CHECKOUT
