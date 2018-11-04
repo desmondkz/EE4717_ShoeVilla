@@ -57,13 +57,14 @@
                     if (isset($_SESSION['username'])) {
                         // echo "&nbsp &nbsp";
                         echo '<li><a href="logout.php">Logout</a></li>';
+                        // echo "<p>&nbsp;</p>";
                         echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        echo "<p>&nbsp</p>";
+                        // echo "<p>&nbsp;</p>";
                         echo '<li><a href="login.php">Login</a></li>';
-                        echo "<p>&nbsp</p>";
-                        echo '&nbsp<li><strong>Guest</strong></li>';                    
+                        // echo "<p>&nbsp;</p>";
+                        echo '<li><strong>Guest</strong></li>';                    
                     }
                 ?>
             </div>

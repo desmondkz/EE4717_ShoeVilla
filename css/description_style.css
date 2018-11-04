@@ -6,11 +6,11 @@
 }
 .details{
     /* text-align: left; */
-    margin-left: 5%;  
+    margin-left: 10%;  
     width: 20%;
     padding: 15px;
     float: left;
-    margin-top: 110px;
+    margin-top: 60px;
 }
 .details h2{
     font-size: 19px;
@@ -19,8 +19,8 @@
     font: 13px sans-serif;
 }
 .productImage{
-    margin-top: 100px;
-    margin-left: 5%;
+    margin-top: 60px;
+    margin-left: 2%;
     width: 32%;
     /* display: inline-block;
     margin:0 auto; */
@@ -29,7 +29,7 @@
 .descriptions{
     width: 16%;
     float: left;
-    margin-top: 110px;
+    margin-top: 60px;
     margin-left: 10%;
     padding: 15px;
 }
