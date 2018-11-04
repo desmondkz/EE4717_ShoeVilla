@@ -43,12 +43,12 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                 <li class="active"><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
-                        echo '&nbsp &nbsp';
-                        echo $_SESSION['username'];
+                        echo "&nbsp &nbsp";
+                        echo "<strong>".$_SESSION['username']."</strong>";
                         echo '<li><a href="logout.php">Logout</a></li>';
                     }
                     else {
-                        echo '&nbsp Guest';
+                        echo '&nbsp <strong>Guest</strong>';
                         echo '<li><a href="login.php">Login</a></li>';
                     }
                 ?>
@@ -74,6 +74,8 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                     <th class='sectionHeader'>Price</th>
                 </thead>
                 <tbody>
+
+
                     <?php 
                     $total = 0;
                     // echo "count:";
@@ -115,9 +117,7 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                                         <span class='price'>$".number_format($totalPrice,2)."</span>
                                     </td>
                                 </tr>";    
-        
                                 }
-                                
                             }
                         }
                     } 

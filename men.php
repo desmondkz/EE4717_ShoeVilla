@@ -53,15 +53,15 @@
                 <li><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
-                        echo '&nbsp &nbsp';
-                        echo $_SESSION['username'];
+                        echo "&nbsp &nbsp";
+                        echo "<strong>".$_SESSION['username']."</strong>";
                         echo '<li><a href="logout.php">Logout</a></li>';
                     }
                     else {
-                        echo '&nbsp Guest';
+                        echo '&nbsp <strong>Guest</strong>';
                         echo '<li><a href="login.php">Login</a></li>';
                     }
-                ?>    
+                ?>
             </div>
 
             <!--Main Navigation-->
