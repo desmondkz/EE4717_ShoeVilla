@@ -14,8 +14,8 @@ create table orders
 ( orderId int(50) unsigned not null auto_increment primary key,
   userId int unsigned not null,
   productId varchar(255) not null,
-  firstName varchar(255) not null,
-  lastName varchar(255) not null,
+  firstname varchar(255) not null,
+  lastname varchar(255) not null,
   address1 varchar(255) not null,
   address2 varchar(255) not null,
   country varchar(50) not null,
@@ -25,12 +25,12 @@ create table orders
   phone int(50) not null,
   nameoncard varchar(255) not null,
   cardnumber int(50) not null,
-  cardType varchar(50) not null,
+  cardtype varchar(50) not null,
   month varchar(50) not null,
   year int(50) not null,
   cvv varchar(255) not null,
   subtotal float(10,2),
-  datePurchase date not null
+  datepurchase date not null
 );
 
 create table users
