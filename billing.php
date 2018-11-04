@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include('mySQLConnect.php');
 ?>
 
 <!DOCTYPE html>
@@ -60,67 +60,72 @@ session_start();
     <div class="myBill">
         <h1 class='h1-billing'>BILLING INFORMATION</h1>
 
-        <form action="billing.php" method="post">
+        <form method="post" action="billing.php">
+            <!-- Display validation errors here -->
+            <?php 
+            include('errors.php');
+            ?>
+
             <table class="billTable" border="0">
                 <tr>
                     <td>
                         <label>FIRST NAME</label>
-                        <input type="text" name="firstname">
+                        <input type="text" name="firstname" value="<?php echo $firstname; ?>">
                     </td>
                     <td>
                         <label>LAST NAME</label>
-                        <input type="text" name="lastname">
+                        <input type="text" name="lastname" value="<?php echo $lastname; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>ADDRESS 1</label>
-                        <input type="text" name="address1">
+                        <input type="text" name="address1" value="<?php echo $address1; ?>">
                     </td>
                     <td>
                         <label>ADDRESS 2 (OPTIONAL)</label>                        
-                        <input type="text" name="address2">
+                        <input type="text" name="address2" value="<?php echo $address2; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>COUNTRY</label>
-                        <input type="text" name="country">
+                        <input type="text" name="country" value="<?php echo $country; ?>">
                     </td>
                     <td>
                         <label>STATE</label>
-                        <input type="text" name="state">
+                        <input type="text" name="state" value="<?php echo $state; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>CITY</label>
-                        <input type="text" name="city">
+                        <input type="text" name="city" value="<?php echo $city; ?>">
                     </td>
                     <td>
                         <label>ZIPCODE</label>
-                        <input type="text" name="zipcode">
+                        <input type="text" name="zipcode" value="<?php echo $zipcode; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>PHONE</label>
-                        <input type="text" name="phone">
+                        <input type="text" name="phone" value="<?php echo $phone; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>NAME ON CARD</label>
-                        <input type="text" name="nameoncard">
+                        <input type="text" name="nameoncard" value="<?php echo $nameoncard; ?>">
                     </td>
                     <td>
                         <label>CARD NUMBER</label>
-                        <input type="text" name="cardnumber">
+                        <input type="text" name="cardnumber" value="<?php echo $cardnumber; ?>">
                     </td>
 
                 </tr>
@@ -128,7 +133,7 @@ session_start();
                 <tr>
                     <td>
                         <label>TYPE &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                        <select name="cardType" class="card-type">
+                        <select name="cardtype" class="card-type">
                             <option value="visa">Visa</option>
                             <option value="master">Master</option>
                         </select>
