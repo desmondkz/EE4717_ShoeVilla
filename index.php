@@ -60,14 +60,15 @@
                         echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        // echo "&nbsp";
+                        echo "&nbsp";
                         echo '<li><a href="login.php">Login</a></li>';
-                        echo '<li><strong>Guest</strong></li>';                    
+                        echo '&nbsp<li><strong>Guest</strong></li>';                    
                     }
                 ?>
             </div>
 
             <!--Main Navigation-->
+            <div class='nav-div'>
             <ul class="main-nav">
                 <li class="active"><a href="index.php"> HOME        </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
@@ -75,10 +76,10 @@
                 <li><a href="women.php"> WOMEN                      </a></li>
                 <li><a href="sales.php"> SALES                      </a></li>
             </ul>
-
+            </div>
             <!--Image Display-->
             <div class="image-display">
-                <img src="images/1.png">              
+                <img class='display' src="images/1.png">              
             </div>
 
             <!--Maddox Category Box-->

@@ -65,12 +65,18 @@
     transition: all .5s ease;
 }
 
+.nav-div{
+    width: 100%;
+    margin: 0 auto;
+    display: table;
+}
 .main-nav
 {
     /* float: left; */
     text-align: center;
     list-style: none;
-    margin-top: 45px;
+    /* margin-top: 45px; */
+    margin-top: -60px;
 }
 
 .main-nav li
@@ -108,7 +114,11 @@
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    /* width: 75%; */
+}
+.display{
+    display: block;
+    margin: 0 auto;
 }
 
 .footer
