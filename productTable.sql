@@ -37,6 +37,6 @@ create table users
 (
     id int(10) not null auto_increment primary key,
     username varchar(255) not null,
-    email VARCHAR(255) not null,
+    email varchar(255) not null,
     password varchar(255) not null
 )   ENGINE=InnoDB DEFAULT CHARSET=latin1;
