@@ -1,0 +1,56 @@
+.myBill {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1-billing {
+    /*border: 2px solid blue;*/
+    font-family: Arial, Helvetica, sans-serif;
+    width: 20%;
+    margin-left: 32%;
+    margin-top: 70px;
+}
+
+.billTable {
+    /*border: 2px solid red;*/
+}
+
+form {
+    /*border: solid green 1px;*/
+    width: 400px;
+    margin-left: 32%;
+    margin-top: 10px;
+    width: 40%;
+}
+
+label {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+input {
+    width: 320px;
+    height: 25px;
+    margin-bottom: 25px;
+    margin-right: 30px;
+    padding: 2px 5px;
+    font-size: 16px;
+}
+
+.card-type {
+    width: 335px;
+    height: 35px;  
+    margin-bottom: 25px;
+    margin-right: 30px;
+}
+
+.expire-date {
+    width: 75px;
+    height: 35px;
+}
+
+.btn {
+    height: 40px;
+    width: 250px;
+    background-color: black;
+    color: white;   
+}
