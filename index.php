@@ -1,19 +1,4 @@
-<?php //include 'mySQLConnect.php';
-
-    session_start();
-
-    //if (!isset($_SESSION['username'])) {
-        //echo 'Welcome guest!';
-    //}
-    //else {
-        //echo $_SESSION['username'];
-    //}
-
-    // if user is not logged in, user cannot access this page
-    //if (empty($_SESSION['username'])) {
-        //header('location: login.php');
-    //}
-
+<?php include 'mySQLConnect.php';
 ?>
 <!doctype html>
 <html>
