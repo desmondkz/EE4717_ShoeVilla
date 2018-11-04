@@ -78,7 +78,7 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                     $total = 0;
                     // echo "count:";
                     // var_dump($_SESSION['cart']);
-                    for ($i=1; $i < 65; $i++){
+                    for ($i=1; $i < 100; $i++){
                         // $empty = $i;
                         // $empty = $i+1;
                         if(!empty($_SESSION['cart'][$i])){
@@ -95,8 +95,8 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                                     <td class='itemDetails'>
                                         <div class='productList'>
                                             <div class='name'>".$_SESSION['cart'][$i]['name']."</div>
-                                            <div class='id'>".$i."</div>
-                                            <div class='color'>Yellow</div>
+                                            <br>
+                                            <div class='color'>".$_SESSION['cart'][$i]['color']."</div>
                                             <div class='size'>".$j."</div>
                                         </div>
                                     </td>

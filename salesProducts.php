@@ -36,6 +36,7 @@ for ($i=0; $i <$num_results; $i++) {
     echo "<input name='introduction' type='text' value='".$row['introduction']."' hidden>";
     echo "<input name='photo' type='text' value='".$row['photos']."' hidden>";
     echo "<input name='name' type='text' value='".$row['name']."' hidden>";
+    echo "<input name='color' type='text' value='".$row['color']."' hidden>";
     echo "<input type='image' src='images/Product/women/".$row['photos']."' alt='Submit' width='300' height='300'>";
     echo "</form>";
     echo "<center>";

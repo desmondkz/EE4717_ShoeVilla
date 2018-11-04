@@ -10,17 +10,14 @@ if (!isset($_SESSION['cart'])){
 if (isset($_POST['productId'])) {
     $id = $_POST['productId'];
     $size = $_POST['size'];
-    // echo $_SESSION['cart'][$id][$size];
-	if(isset($_SESSION['cart'][$id]) and isset($_SESSION['cart'][$id][$size])){
+    if(isset($_SESSION['cart'][$id]) and isset($_SESSION['cart'][$id][$size])){
         $_SESSION['cart'][$id][$size] = (int)$_SESSION['cart'][$id][$size] + 1;
-        // $_SESSION['cart'][$id][$size] = (int)$_SESSION['cart'][$id][$size] + 1;
-    //     $_SESSION['cart']['productId']['quantity'] = 2;
     }else{
         $_SESSION['cart'][$id]['price']=$_POST['price'];
         $_SESSION['cart'][$id][$size]=$_POST['qty'];
         $_SESSION['cart'][$id]['photo']=$_POST['photo'];
         $_SESSION['cart'][$id]['name']=$_POST['name'];
-        // $_SESSION['cart'][$id]['qty']=$_POST['qty'];
+        $_SESSION['cart'][$id]['color']=$_POST['color'];
     }
     // header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
     // exit();
@@ -114,7 +111,7 @@ if (isset($_POST['productId'])) {
                     <br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                     
-                    <p>Color: Yellow</p>
+                    <p>Color: ".$_GET['color']."</p>
                     <br>";
                 echo "<form action='".$_SERVER['REQUEST_URI']."' method='post'>";
                 // echo "<form action='cartSession.php' method='get'>";
@@ -155,6 +152,7 @@ if (isset($_POST['productId'])) {
                     echo "<input name='introduction' type='text' value='".$_GET['introduction']."' hidden>";
                     echo "<input name='photo' type='text' value='".$_GET['photo']."' hidden>";
                     echo "<input name='name' type='text' value='".$_GET['name']."' hidden>";
+                    echo "<input name='color' type='text' value='".$_GET['color']."' hidden>";
                     echo "<input name='qty' type='number' value='1' hidden>";
                     echo "<input type='submit' class='submit' name='submit' value='Add To Shopping Bag'>";
                     echo "</a>";
