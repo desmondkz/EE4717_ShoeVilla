@@ -102,6 +102,26 @@
     }
 
     // when purchase button is clicked
+    if  (isset($_POST['checkout'])) {
+        // Receive information from cart
+        $productId = $_SESSION['cart'][$i]['productId'];
+        $subtotal = $total;
+        $datepurchase = date("Y-m-d");
+
+        $query = "INSERT INTO orders (
+                                        productId,
+                                        subtotal,
+                                        datepurchase
+                                    )
+                                VALUE (
+                                        '$productId',
+                                        '$subtotal',
+                                        '$datepurchase'
+                                )";
+        mysqli_query($conn, $query);
+    }
+
+    // when purchase button is clicked
     if (isset($_POST['purchase'])) {
         // Receive all input values from form
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
