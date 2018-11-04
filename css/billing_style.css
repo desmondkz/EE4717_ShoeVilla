@@ -54,3 +54,14 @@ input {
     background-color: black;
     color: white;   
 }
+
+.error {
+    width: 88%;
+    padding: 10px;
+    border: 1px solid #A94442;
+    color: #A94442;
+    background: #F2DEDE;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 15px;
+}
