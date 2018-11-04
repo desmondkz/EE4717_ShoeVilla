@@ -18,7 +18,10 @@ if (isset($_POST['productId'])) {
         $_SESSION['cart'][$id]['photo']=$_POST['photo'];
         $_SESSION['cart'][$id]['name']=$_POST['name'];
         $_SESSION['cart'][$id]['color']=$_POST['color'];
+        $_SESSION['cart'][$id]['introduction']=$_POST['introduction'];
     }
+    $message="Item successfully added";
+    echo "<script type='text/javascript'>alert('$message');</script>";
     // header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
     // exit();
 }
@@ -56,13 +59,14 @@ if (isset($_POST['productId'])) {
                 <li><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
-                        echo "&nbsp &nbsp";
-                        echo "<strong>".$_SESSION['username']."</strong>";
+                        // echo "&nbsp &nbsp";
                         echo '<li><a href="logout.php">Logout</a></li>';
+                        echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        echo '&nbsp <strong>Guest</strong>';
+                        // echo "&nbsp";
                         echo '<li><a href="login.php">Login</a></li>';
+                        echo '<li><strong>Guest</strong></li>';                    
                     }
                 ?>
             </div>

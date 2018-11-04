@@ -4,10 +4,17 @@ if (!isset($_SESSION['cart'])){
 	$_SESSION['cart'] = array();
 }
 // var_dump($_POST);
-if (isset($_POST['id']) && isset($_POST['size'])) {
+if (isset($_POST['empty'])) {
     $id = $_POST['id'];
     $size = $_POST['size'];
 	unset($_SESSION['cart'][$id][$size]);
+	header('location: ' . $_SERVER['PHP_SELF']);
+	exit();
+}
+if (isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $size = $_POST['size'];
+	$_SESSION['cart'][$id][$size] = $_POST['qty'];
 	header('location: ' . $_SERVER['PHP_SELF']);
 	exit();
 }
@@ -43,13 +50,14 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                 <li class="active"><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
-                        echo "&nbsp &nbsp";
-                        echo "<strong>".$_SESSION['username']."</strong>";
+                        // echo "&nbsp &nbsp";
                         echo '<li><a href="logout.php">Logout</a></li>';
+                        echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        echo '&nbsp <strong>Guest</strong>';
+                        // echo "&nbsp";
                         echo '<li><a href="login.php">Login</a></li>';
+                        echo '<li><strong>Guest</strong></li>';                    
                     }
                 ?>
             </div>
@@ -91,8 +99,17 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                                     $totalPrice = $qty * $price;
                                     $total = $total + $totalPrice;
                                     echo "<tr class='cartRow'>
-                                    <td class='itemImage'>
-                                        <img class='image' src='images/Product/women/".$_SESSION['cart'][$i]['photo']."'>
+                                    <td class='itemImage'>";
+                                    echo "<form action='productDescription.php' method='get'>";
+                                    echo "<input name='productId' type='number' value='".$_SESSION['cart'][$i]['productId']."' hidden>";
+                                    echo "<input name='price' type='text' value='".$_SESSION['cart'][$i]['price']."' hidden>";
+                                    echo "<input name='introduction' type='text' value='".$_SESSION['cart'][$i]['introduction']."' hidden>";
+                                    echo "<input name='photo' type='text' value='".$_SESSION['cart'][$i]['photo']."' hidden>";
+                                    echo "<input name='name' type='text' value='".$_SESSION['cart'][$i]['name']."' hidden>";
+                                    echo "<input name='color' type='text' value='".$_SESSION['cart'][$i]['color']."' hidden>";
+                                    echo "<input type='image' class='image' src='images/Product/women/".$_SESSION['cart'][$i]['photo']."' alt='Submit' width='300' height='300'>";
+                                    echo "</form>";
+                                    echo "
                                     </td>
                                     <td class='itemDetails'>
                                         <div class='productList'>
@@ -103,18 +120,26 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                                         </div>
                                     </td>
                                     <td class='itemQuantity' colspan='2'>
+                                        <form action='".$_SERVER['PHP_SELF']."' method='post'>
                                         <div class='divQuantity'>
-                                            <span id='quantity' value=''>".$_SESSION['cart'][$i][$j]."</span>    
+                                            <input type='number' name='qty' class='quantity' value='".$_SESSION['cart'][$i][$j]."'>    
                                         </div>";
-                                    echo "<form action='".$_SERVER['PHP_SELF']."' method='post'>
+                                    echo "
                                         <input name='id' type='number' value='".$i."' hidden>
                                         <input name='size' type='number' value='".$j."' hidden>
-                                        <input type='submit' name='submit' class='submit' id='removeItem' value='remove'>
+                                        <div>
+                                        <input type='submit' name='empty' class='remove' id='removeItem' value='remove'>
+                                        <div>
+                                        </div>
+                                        <input type='submit' name='update' class='update' id='removeItem' value='update'>
+                                        </div>
                                         </button>
                                         </form>";
                                     echo "</td>
                                     <td class='itemPrice' >
+                                        <div class='priceDiv'>
                                         <span class='price'>$".number_format($totalPrice,2)."</span>
+                                        </div>
                                     </td>
                                 </tr>";    
                                 }

@@ -13,9 +13,9 @@
     width: 15%;
 }
 
-#quantity{
-    /* width:45px; */
-    margin-left: 20%;
+.quantity{
+    width: 55px;
+    /* margin-left: 20%; */
 }
 
 table {
@@ -41,8 +41,13 @@ th {
     margin-top: 70px;
 }
 
-#removeItem{
-    margin-top: 70px;
+.remove{
+    margin-top: 20px;
+    width: 55px;
+}
+.update{
+    width: 55px;
+    margin-top: 2px;
 }
 
 .subtotalRow{
@@ -75,4 +80,7 @@ th {
 }
 .loginCheckoutText{
     color:white;
+}
+.priceDiv{
+    margin-top: -38px;
 }
