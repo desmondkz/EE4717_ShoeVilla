@@ -72,18 +72,20 @@ if (isset($_POST['productId'])) {
             </div>
 
             <!--Main Navigation-->
+            <div class='nav-div'>
             <ul class="main-nav">
-                <li><a href="index.php"> HOME                       </a></li>
+                <li><a href="index.php"> HOME        </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
-                <li class="active"><a href="women.php"> WOMEN       </a></li>
-                <li><a href="sales.php"> SALES                      </a></li>
+                <li><a href="women.php"> WOMEN                      </a></li>
+                <li class="active"><a href="sales.php"> SALES                      </a></li>
             </ul>
+            </div>
 
             <!--Category Boxes-->
             <div class='productDetails' id='container'>
                 <?php
-                    // var_dump($_GET);
+                    var_dump($_GET);
                     echo "
                     <div class='details' id='left'>
                     <h2> DETAILS </h2>

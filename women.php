@@ -53,26 +53,27 @@
                 <li><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
-                        // echo "&nbsp &nbsp";
+                        echo "&nbsp &nbsp";
+                        echo "<strong>".$_SESSION['username']."</strong>";
                         echo '<li><a href="logout.php">Logout</a></li>';
-                        echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        // echo "&nbsp";
+                        echo '&nbsp <strong>Guest</strong>';
                         echo '<li><a href="login.php">Login</a></li>';
-                        echo '<li><strong>Guest</strong></li>';                    
                     }
                 ?>
             </div>
             
             <!--Main Navigation-->
+            <div class='nav-div'>
             <ul class="main-nav">
-                <li><a href="index.php"> HOME                       </a></li>
+                <li><a href="index.php"> HOME        </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
-                <li class="active"><a href="women.php"> WOMEN       </a></li>
+                <li class="active"><a href="women.php"> WOMEN                      </a></li>
                 <li><a href="sales.php"> SALES                      </a></li>
             </ul>
+            </div>
             
             <!--Category Boxes-->
             <div class="women-catbox">

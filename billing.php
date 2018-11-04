@@ -1,5 +1,5 @@
 <?php 
-include('mySQLConnect.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -48,85 +48,82 @@ include('mySQLConnect.php');
             </div>
 
             <!--Main Navigation-->
+            <div class='nav-div'>
             <ul class="main-nav">
-                <li><a href="index.php"> HOME                       </a></li>
+                <li><a href="index.php"> HOME        </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
                 <li><a href="women.php"> WOMEN                      </a></li>
-                <li><a href="sales.php"> SALES                      </a></li>
-            </ul>    
+                <li class="active"><a href="sales.php"> SALES                      </a></li>
+            </ul>
+            </div>  
         </div>
     </header>
 
     <div class="myBill">
         <h1 class='h1-billing'>BILLING INFORMATION</h1>
 
-        <form method="post" action="billing.php">
-            <!-- Display validation errors here -->
-            <?php 
-            include('errors.php');
-            ?>
-
+        <form action="billing.php" method="post">
             <table class="billTable" border="0">
                 <tr>
                     <td>
                         <label>FIRST NAME</label>
-                        <input type="text" name="firstname" value="<?php echo $firstname; ?>">
+                        <input type="text" name="firstname">
                     </td>
                     <td>
                         <label>LAST NAME</label>
-                        <input type="text" name="lastname" value="<?php echo $lastname; ?>">
+                        <input type="text" name="lastname">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>ADDRESS 1</label>
-                        <input type="text" name="address1" value="<?php echo $address1; ?>">
+                        <input type="text" name="address1">
                     </td>
                     <td>
                         <label>ADDRESS 2 (OPTIONAL)</label>                        
-                        <input type="text" name="address2" value="<?php echo $address2; ?>">
+                        <input type="text" name="address2">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>COUNTRY</label>
-                        <input type="text" name="country" value="<?php echo $country; ?>">
+                        <input type="text" name="country">
                     </td>
                     <td>
                         <label>STATE</label>
-                        <input type="text" name="state" value="<?php echo $state; ?>">
+                        <input type="text" name="state">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>CITY</label>
-                        <input type="text" name="city" value="<?php echo $city; ?>">
+                        <input type="text" name="city">
                     </td>
                     <td>
                         <label>ZIPCODE</label>
-                        <input type="text" name="zipcode" value="<?php echo $zipcode; ?>">
+                        <input type="text" name="zipcode">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>PHONE</label>
-                        <input type="text" name="phone" value="<?php echo $phone; ?>">
+                        <input type="text" name="phone">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>NAME ON CARD</label>
-                        <input type="text" name="nameoncard" value="<?php echo $nameoncard; ?>">
+                        <input type="text" name="nameoncard">
                     </td>
                     <td>
                         <label>CARD NUMBER</label>
-                        <input type="text" name="cardnumber" value="<?php echo $cardnumber; ?>">
+                        <input type="text" name="cardnumber">
                     </td>
 
                 </tr>
@@ -134,7 +131,7 @@ include('mySQLConnect.php');
                 <tr>
                     <td>
                         <label>TYPE &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                        <select name="cardtype" class="card-type">
+                        <select name="cardType" class="card-type">
                             <option value="visa">Visa</option>
                             <option value="master">Master</option>
                         </select>
