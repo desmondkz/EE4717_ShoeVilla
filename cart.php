@@ -84,7 +84,10 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                         if(!empty($_SESSION['cart'][$i])){
                             for($j=36; $j<42; $j++){
                                 if(!empty($_SESSION['cart'][$i][$j])){
-                                    $total = $total + $_SESSION['cart'][$i]['price'];
+                                    $price = (int)$_SESSION['cart'][$i][$j];
+                                    $qty = (int)$_SESSION['cart'][$i]['price'];
+                                    $totalPrice = $qty * $price;
+                                    $total = $total + $totalPrice;
                                     echo "<tr class='cartRow'>
                                     <td class='itemImage'>
                                         <img class='image' src='images/Product/women/".$_SESSION['cart'][$i]['photo']."'>
@@ -109,7 +112,7 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                                         </form>";
                                     echo "</td>
                                     <td class='itemPrice' >
-                                        <span class='price'>$".number_format($_SESSION['cart'][$i]['price'],2)."</span>
+                                        <span class='price'>$".number_format($totalPrice,2)."</span>
                                     </td>
                                 </tr>";    
         
@@ -123,7 +126,7 @@ if (isset($_POST['id']) && isset($_POST['size'])) {
                         SUBTOTAL
                     </td>
                     <td>
-                        ".number_format($total,2)."
+                        $".number_format($total,2)."
                     </td>";
                     ?>
                     <tr class='checkoutRow'>

@@ -13,9 +13,9 @@ if (isset($_POST['productId'])) {
     // echo $_SESSION['cart'][$id][$size];
 	if(isset($_SESSION['cart'][$id]) and isset($_SESSION['cart'][$id][$size])){
         $_SESSION['cart'][$id][$size] = (int)$_SESSION['cart'][$id][$size] + 1;
-//     //     $_SESSION['cart']['productId']['quantity'] = 2;
+        // $_SESSION['cart'][$id][$size] = (int)$_SESSION['cart'][$id][$size] + 1;
+    //     $_SESSION['cart']['productId']['quantity'] = 2;
     }else{
-        echo 'no record';
         $_SESSION['cart'][$id]['price']=$_POST['price'];
         $_SESSION['cart'][$id][$size]=$_POST['qty'];
         $_SESSION['cart'][$id]['photo']=$_POST['photo'];
