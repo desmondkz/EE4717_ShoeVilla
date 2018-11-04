@@ -62,7 +62,7 @@ if (isset($_POST['update'])) {
                 ?>
             </div>
 
-                        <!--Main Navigation-->
+            <!--Main Navigation-->
             <div class='nav-div'>
             <ul class="main-nav">
                 <li class="active"><a href="index.php"> HOME        </a></li>
@@ -85,9 +85,9 @@ if (isset($_POST['update'])) {
                     <th class='sectionHeader' colspan='2'>Quantity</th>
                     <th class='sectionHeader'>Price</th>
                 </thead>
+      
+      
                 <tbody>
-
-
                     <?php 
                     $total = 0;
                     // echo "count:";
@@ -124,6 +124,7 @@ if (isset($_POST['update'])) {
                                         </div>
                                     </td>
                                     <td class='itemQuantity' colspan='2'>
+                                    
                                         <form action='".$_SERVER['PHP_SELF']."' method='post'>
                                         <div class='divQuantity'>
                                             <input type='number' name='qty' class='quantity' value='".$_SESSION['cart'][$i][$j]."'>    
