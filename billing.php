@@ -1,5 +1,7 @@
 <?php 
 session_start();
+var_dump($_SESSION['cart']);
+var_dump($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +66,7 @@ session_start();
         <h1 class='h1-billing'>BILLING INFORMATION</h1>
 
         <form action="billing.php" method="post">
+            
             <table class="billTable" border="0">
                 <tr>
                     <td>
@@ -131,7 +134,7 @@ session_start();
                 <tr>
                     <td>
                         <label>TYPE &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                        <select name="cardType" class="card-type">
+                        <select name="cardtype" class="card-type">
                             <option value="visa">Visa</option>
                             <option value="master">Master</option>
                         </select>
@@ -174,9 +177,116 @@ session_start();
                     </td>
                 </tr>
             </table>
+            
+
+            
+            <table class="cartTable" border="0">
+                <thead>
+                    <th colspan='2'align="left">PRODUCT</th>
+                    <th colspan='2'align="center">QUANTITY</th>
+                    <th align="center">PRICE</th>
+                </thead>
+                <tbody>
+                <?php 
+                    $total = 0;
+                    for ($i=1; $i < 100; $i++){
+                        if(!empty($_SESSION['cart'][$i])){
+                            for($j=36; $j<42; $j++){
+                                if(!empty($_SESSION['cart'][$i][$j])){
+                                    $price = (int)$_SESSION['cart'][$i][$j];
+                                    $qty = (int)$_SESSION['cart'][$i]['price'];
+                                    $totalPrice = $qty * $price;
+                                    $total = $total + $totalPrice;
+                                    echo "<tr class='cartRow'>
+                                    <td class='itemImage'>";
+                                    echo "<form action='productDescription.php' method='get'>";
+                                    echo "<input name='productId' type='number' value='".$_SESSION['cart'][$i]['productId']."' hidden>";
+                                    echo "<input name='price' type='text' value='".$_SESSION['cart'][$i]['price']."' hidden>";
+                                    echo "<input name='introduction' type='text' value='".$_SESSION['cart'][$i]['introduction']."' hidden>";
+                                    echo "<input name='photo' type='text' value='".$_SESSION['cart'][$i]['photo']."' hidden>";
+                                    echo "<input name='name' type='text' value='".$_SESSION['cart'][$i]['name']."' hidden>";
+                                    echo "<input name='color' type='text' value='".$_SESSION['cart'][$i]['color']."' hidden>";
+                                    echo "<input type='image' class='image' src='images/Product/women/".$_SESSION['cart'][$i]['photo']."' alt='Submit' width='300' height='300'>";
+                                    echo "</form>";
+                                    echo "
+                                    </td>
+                                    <td class='itemDetails' align='left'>
+                                        <div class='productList'>
+                                            <div class='name'>".$_SESSION['cart'][$i]['name']."</div>
+                                            <br>
+                                            <div class='color'>".$_SESSION['cart'][$i]['color']."</div>
+                                            <div class='size'>".$j."</div>
+                                        </div>
+                                    </td>
+                                    <td class='itemQuantity' colspan='2' align='center'>
+                                        <form action='".$_SERVER['PHP_SELF']."' method='post'>
+                                        <div class='divQuantity'>
+                                            ".$_SESSION['cart'][$i][$j]."    
+                                        </div>";
+                                    echo "
+                                        </form>";
+                                    echo "</td>
+                                    <td class='itemPrice' align='center'>
+                                        <div class='priceDiv'>
+                                        <span class='price'>$".number_format($totalPrice,2)."</span>
+                                        </div>
+                                    </td>
+                                </tr>";    
+                                }
+                            }
+                        }
+                    } 
+                    echo "<tr class='subtotalRow'>
+                    <td class='subtotal' colspan='4'>
+                        SUBTOTAL
+                    </td>
+                    <td align='center'>
+                        $".number_format($total,2)."
+                    </td>";
+                    ?>
+                </tbody>
+            </table>
+            
 
             <button type="submit" name="purchase" class="btn">PURCHASE</button>
         </form>
     </div>
+
+    <!--Footer Area-->
+    <div class="footer">
+        <div class="footer_sub_1">
+            <p><a href=""> STORE LOCATOR </a></p><br><br>
+            <p><a href=""> FIND A STORE </a></p><br>
+            <p><a href=""> RETURN LOCATIONS </a></p>
+        </div>
+        <div class="footer_sub_2">
+            <p><a href=""> CLIENT SERVICES</a></p><br><br>
+            <p><a href=""> HELP & FAQ </a></p><br>
+            <p><a href=""> SIZE CHART </a></p><br>
+            <p><a href=""> CONTACT US </a></p><br>
+            <p><a href=""> SITE MAP </a></p>
+        </div>
+        <div class="footer_sub_3">
+            <p><a href=""> GIVE A GIFT </a></p><br><br>
+            <p><a href=""> CHECK BALANCE </a></p><br>
+            <p><a href=""> GIFT CARD </a></p><br>
+            <p><a href=""> GIFTNOW </a></p>
+        </div>
+        <div class="footer_sub_4">
+            <p><a href=""> QUICK LINK </a></p><br><br>
+            <p><a href=""> OUR APP </a></p><br>
+            <p><a href=""> LAUNCH RESERVATION </a></p><br>
+            <p><a href=""> AFFILIATES </a></p><br>
+            <p><a href=""> FIT GUARANTEE </a></p>
+        </div>
+        <div class="footer_social">
+            <a href=""><img src="images/social.PNG" style="width:200px;height:40px;"></a>
+        </div>
+        <div class="footer_copyright">
+            <p>© 2018 ShoeVilla.com, Inc. All Rights Reserved</p>
+        </div>
+    </div>
+
 </body>
 </html>
+

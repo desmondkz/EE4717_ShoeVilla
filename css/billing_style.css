@@ -1,25 +1,36 @@
 .myBill {
+    /*border: solid 5px black;*/
+    width: 100%;
+    height: 90%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .h1-billing {
-    /*border: 2px solid blue;*/
+    /*border: 5px solid blue;*/
     font-family: Arial, Helvetica, sans-serif;
     width: 20%;
-    margin-left: 32%;
+    margin-left: 10%;
     margin-top: 70px;
 }
 
 .billTable {
     /*border: 2px solid red;*/
+    width: 40%;
+}
+
+.cartTable {
+    position: absolute;
+    top: 300px;
+    left: 1100px;
+    /*border: 2px solid pink;*/
+    width: 30%;
 }
 
 form {
-    /*border: solid green 1px;*/
-    width: 400px;
-    margin-left: 32%;
+    /*border: solid green 5px;*/
+    margin-left: 10%;
     margin-top: 10px;
-    width: 40%;
+    width: 80%;
 }
 
 label {
@@ -49,10 +60,12 @@ input {
 }
 
 .btn {
+    position: relative;
+    left: 1200px;
     height: 40px;
     width: 250px;
     background-color: black;
-    color: white;   
+    color: white;  
 }
 
 .error {
@@ -64,4 +77,39 @@ input {
     border-radius: 5px;
     text-align: left;
     margin-bottom: 15px;
+}
+
+.image{
+    width: 136px;
+    height: 136px;
+}
+
+#productTitle{
+    text-align: left;
+}
+
+.productList{
+    margin-left: 10px;
+}
+.itemImage{
+    width: 15%;
+}
+
+.quantity{
+    width: 55px;
+}
+
+.subtotalRow{
+    height: 45px;
+}
+
+.remove{
+    margin-top: 20px;
+    width: 55px;
+    font-size: 80%;
+}
+.update{
+    width: 55px;
+    margin-top: 2px;
+    font-size: 80%;
 }
