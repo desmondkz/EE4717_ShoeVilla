@@ -1,7 +1,7 @@
 <?php 
-session_start();
-var_dump($_SESSION['cart']);
-var_dump($_SESSION['username']);
+include('mySQLConnect.php');
+//var_dump($_SESSION['cart']);
+//var_dump($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>
@@ -65,8 +65,12 @@ var_dump($_SESSION['username']);
     <div class="myBill">
         <h1 class='h1-billing'>BILLING INFORMATION</h1>
 
-        <form action="billing.php" method="post">
-            
+        <form method="post" action="billing.php">
+            <!-- Display validation errors here -->
+            <?php 
+            include('errors.php');
+            ?>
+
             <table class="billTable" border="0">
                 <tr>
                     <td>
