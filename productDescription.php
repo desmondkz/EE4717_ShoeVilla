@@ -85,7 +85,7 @@ if (isset($_POST['productId'])) {
             <!--Category Boxes-->
             <div class='productDetails' id='container'>
                 <?php
-                    var_dump($_GET);
+                    // var_dump($_GET);
                     echo "
                     <div class='details' id='left'>
                     <h2> DETAILS </h2>

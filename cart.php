@@ -62,14 +62,18 @@ if (isset($_POST['update'])) {
                 ?>
             </div>
 
-            <!--Main Navigation-->
+                        <!--Main Navigation-->
+            <div class='nav-div'>
             <ul class="main-nav">
-                <li><a href="index.php"> HOME                       </a></li>
+                <li class="active"><a href="index.php"> HOME        </a></li>
                 <li><a href="new_arrival.php"> NEW ARRIVAL          </a></li>
                 <li><a href="men.php"> MEN                          </a></li>
                 <li><a href="women.php"> WOMEN                      </a></li>
                 <li><a href="sales.php"> SALES                      </a></li>
-            </ul>    
+            </ul>
+            </div>
+
+  
         </div>
     </header>
 

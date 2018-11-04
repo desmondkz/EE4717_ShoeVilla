@@ -60,8 +60,9 @@
                         echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        // echo "&nbsp";
+                        echo "<p>&nbsp</p>";
                         echo '<li><a href="login.php">Login</a></li>';
+                        echo "<p>&nbsp</p>";
                         echo '&nbsp<li><strong>Guest</strong></li>';                    
                     }
                 ?>

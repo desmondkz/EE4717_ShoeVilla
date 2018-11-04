@@ -43,8 +43,6 @@ insert into products values
     (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_20.jpg','SPEED TRAINERS', 'Black'),
     (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_21.jpg','SPEED TRAINERS', 'Red');
 
--- insert into orders values
---     (NULL, 1, 3, 888.88, '2018-10-26');
 
--- insert into users values
---     (NULL, 'zzhang034', 'zzhang034@e.ntu.edu.sg', '123456');
+insert into users values
+    (NULL, 'zzhang034', 'zzhang034@e.ntu.edu.sg', '123456');
