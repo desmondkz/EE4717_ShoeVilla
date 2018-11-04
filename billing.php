@@ -116,7 +116,7 @@ session_start();
                 <tr>
                     <td>
                         <label>NAME ON CARD</label>
-                        <input type="text" name="nameOnCard">
+                        <input type="text" name="nameoncard">
                     </td>
                     <td>
                         <label>CARD NUMBER</label>
