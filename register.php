@@ -32,35 +32,37 @@ include('mySQLConnect.php');
         </div>
 
         <form method="post" action="register.php">
-            <!-- Display validation errors here -->
-            <?php 
-            include('errors.php');
-            ?>
+            <form action="show_post.php" method="post" id=jobForm>
+                <!-- Display validation errors here -->
+                <?php 
+                include('errors.php');
+                ?>
 
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username" value="<?php echo $username; ?>">
-            </div>
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email" value="<?php echo $email; ?>">
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password_1">
-            </div>
-            <div class="input-group">
-                <label>Confirm Password</label>
-                <input type="password" name="password_2">
-            </div>
-            <div class="input-group">
-                <button type="submit" name="reg_user" class="btn">Register</button>
-            </div>
-            <p>
-                Already a member?   <a href="login.php">Sign in</a>
-            </p>
-
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" name="username" id="username" required onchange="validateuserName()" value="<?php echo $username; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" id="email" required onchange="validateEmail()" value="<?php echo $email; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password_1">
+                </div>
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="password_2">
+                </div>
+                <div class="input-group">
+                    <button type="submit" name="reg_user" class="btn">Register</button>
+                </div>
+                <p>
+                    Already a member?   <a href="login.php">Sign in</a>
+                </p>
+            </form>
         </form>
+        <script type="text/javascript" src="js/validation.js"></script>
     </div>
 </body>
 </html>
