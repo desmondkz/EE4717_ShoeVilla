@@ -11,11 +11,26 @@ create table products
 );
 
 create table orders
-( orderId int unsigned not null auto_increment primary key,
+( orderId int(50) unsigned not null auto_increment primary key,
   userId int unsigned not null,
-  productId varchar(500) not null,
-  price float(10,2),
-  date date not null
+  productId varchar(255) not null,
+  firstName varchar(255) not null,
+  lastName varchar(255) not null,
+  address1 varchar(255) not null,
+  address2 varchar(255) not null,
+  country varchar(50) not null,
+  state varchar(50) not null,
+  city varchar(50) not null,
+  zipcode int(50) not null,
+  phone int(50) not null,
+  nameoncard varchar(255) not null,
+  cardnumber int(50) not null,
+  cardType varchar(50) not null,
+  month varchar(50) not null,
+  year int(50) not null,
+  cvv varchar(255) not null,
+  subtotal float(10,2),
+  datePurchase date not null
 );
 
 create table users
