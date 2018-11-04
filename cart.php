@@ -98,8 +98,8 @@ if (isset($_POST['update'])) {
                         if(!empty($_SESSION['cart'][$i])){
                             for($j=36; $j<42; $j++){
                                 if(!empty($_SESSION['cart'][$i][$j])){
-                                    $price = (int)$_SESSION['cart'][$i][$j];
-                                    $qty = (int)$_SESSION['cart'][$i]['price'];
+                                    $qty = (int)$_SESSION['cart'][$i][$j];
+                                    $price = (int)$_SESSION['cart'][$i]['price'];
                                     $totalPrice = $qty * $price;
                                     $total = $total + $totalPrice;
                                     echo "<tr class='cartRow'>

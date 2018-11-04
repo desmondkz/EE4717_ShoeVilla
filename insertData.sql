@@ -44,5 +44,5 @@ insert into products values
     (NULL, 'male', 0, 0, 988.88, 'new male shoes', 'men_21.jpg','SPEED TRAINERS', 'Red');
 
 
-insert into users values
-    (NULL, 'zzhang034', 'zzhang034@e.ntu.edu.sg', '123456');
+-- insert into users values
+--     (NULL, 'zzhang034', 'zzhang034@e.ntu.edu.sg', '123456');
