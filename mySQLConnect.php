@@ -71,6 +71,7 @@
     if (isset($_POST['login_user'])) {
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
+        
       
         if (empty($username)) {
             array_push($errors, "Username is required");
@@ -84,12 +85,13 @@
             //$password = $password;
             $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
             $results = mysqli_query($conn, $query);
+
+
             if (mysqli_num_rows($results) == 1) {
                 $_SESSION['username'] = $username;
-                //$_SESSION['success'] = "You are now logged in!";
-              header('location: index.php');
+                header('location: index.php');
             }else {
-                array_push($errors, "Wrong username/password combination");
+                array_push($errors, "Wrong username/password combination or You are not registered.");
             }
         }
     }
@@ -102,28 +104,11 @@
     }
 
     // when purchase button is clicked
-    if  (isset($_POST['checkout'])) {
-        // Receive information from cart
-        $productId = $_SESSION['cart'][$i]['productId'];
-        $subtotal = $total;
-        $datepurchase = date("Y-m-d");
-
-        $query = "INSERT INTO orders (
-                                        productId,
-                                        subtotal,
-                                        datepurchase
-                                    )
-                                VALUE (
-                                        '$productId',
-                                        '$subtotal',
-                                        '$datepurchase'
-                                )";
-        mysqli_query($conn, $query);
-    }
-
-    // when purchase button is clicked
     if (isset($_POST['purchase'])) {
-        // Receive all input values from form
+        require ('email.php');
+
+        // Receive all input values from billing form
+        var_dump($_POST);
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
         $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
         $address1 = mysqli_real_escape_string($conn, $_POST['address1']);
@@ -156,7 +141,7 @@
         // if there are no errors, log the order info into database
         if (count($errors) == 0) {
             $cvv = md5($cvv);
-            $query = "INSERT INTO orders (
+            $query = "INSERT INTO billing_info (
                                             firstname, 
                                             lastname, 
                                             address1,
