@@ -77,62 +77,62 @@ include ('mySQL.php');
                 <tr>
                     <td>
                         <label>FIRST NAME</label>
-                        <input type="text" name="firstname">
+                        <input type="text" name="firstname" id="firstname" required onchange="validatefirstName()">
                     </td>
                     <td>
                         <label>LAST NAME</label>
-                        <input type="text" name="lastname">
+                        <input type="text" name="lastname" id="lastname" required onchange="validatelastName()">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>ADDRESS 1</label>
-                        <input type="text" name="address1">
+                        <input type="text" name="address1" id="address1" required onchange="validateaddress1()">
                     </td>
                     <td>
                         <label>ADDRESS 2 (OPTIONAL)</label>                        
-                        <input type="text" name="address2">
+                        <input type="text" name="address2" id="address2" required onchange="validateaddress2()">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>COUNTRY</label>
-                        <input type="text" name="country">
+                        <input type="text" name="country" id="country" required onchange="validateCountryStateCity()">
                     </td>
                     <td>
                         <label>STATE</label>
-                        <input type="text" name="state">
+                        <input type="text" name="state" id="state" required onchange="validateCountryStateCity()">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>CITY</label>
-                        <input type="text" name="city">
+                        <input type="text" name="city" id="city" required onchange="validateCountryStateCity()">
                     </td>
                     <td>
                         <label>ZIPCODE</label>
-                        <input type="text" name="zipcode">
+                        <input type="text" name="zipcode" id="zipcode" maxlength="6" required onchange="validateZipcode()">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>PHONE</label>
-                        <input type="text" name="phone">
+                        <input type="text" name="phone" id="phone" maxlength="8" required onchange="validatePhone()">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <label>NAME ON CARD</label>
-                        <input type="text" name="nameoncard">
+                        <input type="text" name="nameoncard" id="nameoncard" required onchange="validateNameonCard()">
                     </td>
                     <td>
                         <label>CARD NUMBER</label>
-                        <input type="text" name="cardnumber">
+                        <input type="text" name="cardnumber" id="cardnumber" maxlength="16" required onchange="validateCardnumber()">
                     </td>
 
                 </tr>
@@ -179,7 +179,7 @@ include ('mySQL.php');
                 <tr>
                     <td>
                         <label>CVV</label>
-                        <input type="password" name="cvv">
+                        <input type="password" name="cvv" maxlength="3">
                     </td>
                 </tr>
             </table>
@@ -263,6 +263,7 @@ include ('mySQL.php');
         
             <button type="submit" name="purchase" class="btn">PURCHASE</button>
         </form>
+        <script type="text/javascript" src="js/validation.js"></script>
     </div>
 
 
