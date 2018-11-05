@@ -122,6 +122,11 @@
     margin: 0 auto;
 }
 
+.confirmation h2{
+    height: 80px;
+    margin-top: 30px;
+}
+
 .footer
 {
     position: relative;
