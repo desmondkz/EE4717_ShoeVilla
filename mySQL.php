@@ -10,10 +10,14 @@
     $conn = mysqli_connect( 'localhost',  
                             'root',    
                             'root', 
-                            'f34ee',
-                            8889
+                            'f34ee'
                         );
-    
+    $conn_orderID = mysqli_connect( 'localhost',  
+                            'root',    
+                            'root', 
+                            'f34ee'
+                        );
+
     // if the register button is clicked, register user
     if (isset($_POST['reg_user'])) {
         // Receive all input values from form
@@ -99,7 +103,7 @@
     // Logout
     if (isset($_GET['logout'])) {
         session_destroy();
-        unset($_SESSION['username']);
+        // unset($_SESSION['username']);
         header('location: index.php');
     }
 
@@ -126,11 +130,17 @@
         
         $mysql_date_now = date("Y-m-d H:i:s");
         $total = 0;
-        $userId = $_SESSION['userId'];
+        $userId = $_SESSION['username'];
+        $query="INSERT INTO orderIDs (id) VALUE (NULL)";
+        mysqli_query($conn_orderID, $query);
+        $orderID=mysqli_insert_id($conn_orderID);
+        echo $userId;
+        echo 'outside';
         for ($i=1; $i < 100; $i++){
             if(!empty($_SESSION['cart'][$i])){
                 for($j=36; $j<42; $j++){
                     if(!empty($_SESSION['cart'][$i][$j])){
+                        echo 'yes';
                         $qty = (int)$_SESSION['cart'][$i][$j];
                         $price = (int)$_SESSION['cart'][$i]['price'];
                         $totalPrice = $qty * $price;
@@ -143,9 +153,12 @@
                         $name=$_SESSION['cart'][$i]['name'];
                         $color=$_SESSION['cart'][$i]['color'];
                         $photo=$_SESSION['cart'][$i]['photo'];
+                        // echo $orderID;
+                        echo $size;
+                        // $id3 = 3;
                         $query="INSERT INTO orders (
-                                            orderid, 
-                                            userId, 
+                                            orderId, 
+                                            username, 
                                             productId,
                                             productname,
                                             color,
@@ -154,8 +167,8 @@
                                             subtotal,
                                             datepurchase)
                                   VALUE (
-                                            NULL,
-                                            '$userId',                                           
+                                            '$orderID',
+                                            '$username',                                           
                                             '$productId',
                                             '$name',
                                             '$color',
@@ -164,11 +177,13 @@
                                             '$totalPrice',
                                             '$mysql_date_now'
                                             )";
-            mysqli_query($conn, $query);
-                                  }
-                                }
-                            }
+                        mysqli_query($conn, $query);
+
                         }
+                }
+                }
+            }
+        
 
                         
         // ensure that form fields are filled properly
@@ -222,5 +237,8 @@
                                             )";
             mysqli_query($conn, $query);
         }
+        unset($_SESSION['cart']);
+        header('location: index.php');
+    
     }
 ?>
