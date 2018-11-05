@@ -132,7 +132,7 @@ include ('mySQL.php');
                     </td>
                     <td>
                         <label>CARD NUMBER</label>
-                        <input type="text" name="cardnumber" id="cardnumber" maxlength="16" required onchange="validateCardnumber()">
+                        <input type="text" name="cardnumber" id="cardnumber" min="16" maxlength="16" required onchange="validateCardnumber()">
                     </td>
 
                 </tr>
