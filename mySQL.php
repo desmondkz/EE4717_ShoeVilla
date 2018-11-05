@@ -130,7 +130,7 @@
         
         $mysql_date_now = date("Y-m-d H:i:s");
         $total = 0;
-        $userId = $_SESSION['username'];
+        $username = $_SESSION['username'];
         $query="INSERT INTO orderIDs (id) VALUE (NULL)";
         mysqli_query($conn_orderID, $query);
         $orderID=mysqli_insert_id($conn_orderID);
