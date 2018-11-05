@@ -1,7 +1,9 @@
 <?php 
-include('mySQLConnect.php');
-//var_dump($_SESSION['cart']);
+include ('mySQLConnect.php');
+//var_dump($_SESSION['cart']);            
 //var_dump($_SESSION['username']);
+var_dump($_GET);
+
 ?>
 
 <!DOCTYPE html>
@@ -190,6 +192,7 @@ include('mySQLConnect.php');
                     <th colspan='2'align="center">QUANTITY</th>
                     <th align="center">PRICE</th>
                 </thead>
+                
                 <tbody>
                 <?php 
                     $total = 0;
@@ -203,7 +206,7 @@ include('mySQLConnect.php');
                                     $total = $total + $totalPrice;
                                     echo "<tr class='cartRow'>
                                     <td class='itemImage'>";
-                                    echo "<form action='productDescription.php' method='get'>";
+                                    echo "<form action='billing.php' method='get'>";
                                     echo "<input name='productId' type='number' value='".$_SESSION['cart'][$i]['productId']."' hidden>";
                                     echo "<input name='price' type='text' value='".$_SESSION['cart'][$i]['price']."' hidden>";
                                     echo "<input name='introduction' type='text' value='".$_SESSION['cart'][$i]['introduction']."' hidden>";
@@ -228,7 +231,9 @@ include('mySQLConnect.php');
                                             ".$_SESSION['cart'][$i][$j]."    
                                         </div>";
                                     echo "
-                                        </form>";
+                                    <input name='id' type='text' value='".$i."' hidden>
+                                    <input name='size' type='text' value='".$j."' hidden>
+                                    </form>";
                                     echo "</td>
                                     <td class='itemPrice' align='center'>
                                         <div class='priceDiv'>
@@ -236,10 +241,11 @@ include('mySQLConnect.php');
                                         </div>
                                     </td>
                                 </tr>";    
-                                }
-                            }
-                        }
+                                } 
+                            }                           
+                        }                       
                     } 
+                    
                     echo "<tr class='subtotalRow'>
                     <td class='subtotal' colspan='4'>
                         SUBTOTAL
@@ -248,14 +254,19 @@ include('mySQLConnect.php');
                         $".number_format($total,2)."
                     </td>";
                     ?>
+
+
+
                 </tbody>
             </table>
-            
-
+        
             <button type="submit" name="purchase" class="btn">PURCHASE</button>
         </form>
     </div>
 
+
+
+    
     <!--Footer Area-->
     <div class="footer">
         <div class="footer_sub_1">
@@ -290,6 +301,8 @@ include('mySQLConnect.php');
             <p>© 2018 ShoeVilla.com, Inc. All Rights Reserved</p>
         </div>
     </div>
+
+    
 
 </body>
 </html>
