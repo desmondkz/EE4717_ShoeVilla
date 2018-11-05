@@ -3,7 +3,7 @@
 
     // store to test if they were logged in
     $old_user = $_SESSION['username'];
-    unset($_SESSION['username']);
+    // unset($_SESSION['username']);
     session_destroy();
 ?>
 

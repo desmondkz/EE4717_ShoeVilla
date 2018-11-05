@@ -80,8 +80,8 @@ function validateaddress1()
 function validateaddress2()
 {
     var address2=document.getElementById("address2");
-    //var legalName=/(?=.*[A-Za-z])(?=.*\s)./;
-	var legaladdress2=/^[A-Za-z0-9\.\s]+$/;
+    //var legalName=/(?=.*[A-Za-z])(?=.*\s)./;   
+	var legaladdress2=/^[A-Za-z0-9\-\.]+$/;      
     var isValidaddress2 = legaladdress2.test(address2.value);
     
     if (isValidaddress2 == false)
@@ -138,8 +138,15 @@ function validateZipcode()
       { 
         alert("The zipcode you entered is not in the correct form. \n" +
                 "The zipcode contains numbers");
+        
         zipcode.focus(); 
       }
+
+    if (zipcode.value.length < 6){
+        alert("The zipcode you enetered is not long enough, should be 6 digits")
+        zipcode.focus();
+    }
+
 }
 
 function validatePhone()
@@ -154,6 +161,10 @@ function validatePhone()
                 "The phone number contains numbers");
                 phone.focus(); 
       }
+    if (phone.value.length < 8){
+        alert("The phone number you enetered is not long enough, should be 8 digits")
+        phone.focus();
+    }
 }
 
 
@@ -166,8 +177,8 @@ function validateNameonCard()
     
     if (isValidnameoncard == false)
         { 
-            alert("The name you entered is not in the correct form. \n" +
-            "The name contains alphabet characters and character space");
+            alert("The name on card you entered is not in the correct form. \n" +
+            "The name on card contains alphabet characters and character space");
             nameoncard.focus(); 
         }
 }
@@ -185,6 +196,11 @@ function validateCardnumber()
                 "The Card number contains numbers");
         cardnumber.focus(); 
       }
+    if (cardnumber.value.length < 8){
+        alert("The Card number you enetered is not long enough, should be 16 digits")
+        cardnumber.focus();
+    }
+
 }
 
 

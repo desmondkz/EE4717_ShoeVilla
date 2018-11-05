@@ -13,15 +13,16 @@ create table products
 
 create table orders
 ( 
-    orderId int(50) unsigned not null auto_increment primary key,
-    userId int unsigned not null,
+    orders int(50) unsigned not null auto_increment primary key,
+    orderId int(50) not null,
+    username varchar(255) not null,
     productId varchar(255) not null,
     productname varchar(255) not null,
     color varchar(255) not null,
     size int(50) not null,
     quantity int(50) not null,
     subtotal float(10,2),
-    datepurchase date not null
+    datepurchase datetime not null
 )   ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table billing_info
@@ -51,3 +52,8 @@ create table users
     email varchar(255) not null,
     password varchar(255) not null
 )   ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+create table orderIDs
+(
+    id int(50) not null auto_increment primary key
+)
