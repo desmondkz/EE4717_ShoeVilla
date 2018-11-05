@@ -32,7 +32,6 @@ include('mySQL.php');
         </div>
 
         <form method="post" action="register.php">
-            <form action="show_post.php" method="post" id=jobForm>
                 <!-- Display validation errors here -->
                 <?php 
                 include('errors.php');
@@ -60,7 +59,6 @@ include('mySQL.php');
                 <p>
                     Already a member?   <a href="login.php">Sign in</a>
                 </p>
-            </form>
         </form>
         <script type="text/javascript" src="js/validation.js"></script>
     </div>

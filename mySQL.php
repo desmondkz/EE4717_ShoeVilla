@@ -66,7 +66,6 @@
             mysqli_query($conn, $query);
              
             $_SESSION['username'] = $username;
-            //$_SESSION['success'] = "You are now logged in!";
             header('location: index.php'); // redirect to homepage 
         }    
     }
@@ -86,7 +85,6 @@
       
         if (count($errors) == 0) {
             $password = md5($password);
-            //$password = $password;
             $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
             $results = mysqli_query($conn, $query);
             if (mysqli_num_rows($results) == 1) {
@@ -103,7 +101,6 @@
     // Logout
     if (isset($_GET['logout'])) {
         session_destroy();
-        // unset($_SESSION['username']);
         header('location: index.php');
     }
 
@@ -153,9 +150,6 @@
                         $name=$_SESSION['cart'][$i]['name'];
                         $color=$_SESSION['cart'][$i]['color'];
                         $photo=$_SESSION['cart'][$i]['photo'];
-                        // echo $orderID;
-                        echo $size;
-                        // $id3 = 3;
                         $query="INSERT INTO orders (
                                             orderId, 
                                             username, 

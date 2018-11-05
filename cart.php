@@ -90,11 +90,7 @@ if (isset($_POST['update'])) {
                 <tbody>
                     <?php 
                     $total = 0;
-                    // echo "count:";
-                    // var_dump($_SESSION['cart']);
                     for ($i=1; $i < 100; $i++){
-                        // $empty = $i;
-                        // $empty = $i+1;
                         if(!empty($_SESSION['cart'][$i])){
                             for($j=36; $j<42; $j++){
                                 if(!empty($_SESSION['cart'][$i][$j])){

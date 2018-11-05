@@ -40,15 +40,11 @@
                 <li><a href="cart.php">Cart</a></li>
                 <?php    
                     if (isset($_SESSION['username'])) {
-                        // echo "&nbsp &nbsp";
                         echo '<li><a href="logout.php">Logout</a></li>';
-                        // echo "<p>&nbsp;</p>";
                         echo "<li><strong>".$_SESSION['username']."</strong></li>";
                     }
                     else {
-                        // echo "<p>&nbsp;</p>";
                         echo '<li><a href="login.php">Login</a></li>';
-                        // echo "<p>&nbsp;</p>";
                         echo '<li><strong>Guest</strong></li>';                    
                     }
                 ?>
@@ -68,21 +64,6 @@
             <div class="image-display">
                 <img class='display' src="images/1.png">              
             </div>
-
-            <!--Maddox Category Box-->
-            <!-- <div class="maddox-catbox">
-                <a href="maddox.html">
-                        <img src="images/Product/F0.1.JPG">
-                        <img src="images/Product/F0.0.JPG">
-                        <img src="images/Product/F0.2.JPG">
-                </a>
-                <p class="maddox-header">INTRODUCING MADDOX</p>
-                <p class="maddox-tagline">Chunky with some serious style.</p>
-                <ul class="maddox-btn">
-                    <li><a href="maddox.html"> SHOP THE NEW MADDOX </a></li>
-                </ul>
-            </div> -->
-
         </div>
     </header>
 

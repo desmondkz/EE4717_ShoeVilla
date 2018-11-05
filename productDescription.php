@@ -120,7 +120,6 @@ if (isset($_POST['productId'])) {
                     <p>Color: ".$_GET['color']."</p>
                     <br>";
                 echo "<form action='".$_SERVER['REQUEST_URI']."' method='post'>";
-                // echo "<form action='cartSession.php' method='get'>";
                 echo "<p>Sizes:</p>
                     <div>
                         <ul class='sizeSelector'>
@@ -150,7 +149,6 @@ if (isset($_POST['productId'])) {
                         </li>
                     </ul>
                     </div>";
-                    // $product = array($_GET['productId'],)
                     echo "<br>
                     <div class='submitButton'>";
                     echo "<input name='productId' type='number' value='".$_GET['productId']."' hidden>";
@@ -167,9 +165,6 @@ if (isset($_POST['productId'])) {
                 </div>
                 </div>
                 ";
-                
-                // var_dump($_SESSION['cart']);
-                // var_dump($_GET)
                 ?>
                 
             </div>

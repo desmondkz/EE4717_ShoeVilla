@@ -206,16 +206,7 @@ include ('mySQL.php');
                                     $total = $total + $totalPrice;
                                     echo "<tr class='cartRow'>
                                     <td class='itemImage'>";
-                                    // echo "<form action='billing.php' method='post'>";
-                                    // echo "<input name='qty' type='number' value='".$j."' hidden>";
-                                    // echo "<input name='productId' type='number' value='".$i."' hidden>";
-                                    // echo "<input name='price' type='text' value='".$_SESSION['cart'][$i]['price']."' hidden>";
-                                    // echo "<input name='introduction' type='text' value='".$_SESSION['cart'][$i]['introduction']."' hidden>";
-                                    // echo "<input name='photo' type='text' value='".$_SESSION['cart'][$i]['photo']."' hidden>";
-                                    // echo "<input name='name' type='text' value='".$_SESSION['cart'][$i]['name']."' hidden>";
-                                    // echo "<input name='color' type='text' value='".$_SESSION['cart'][$i]['color']."' hidden>";
                                     echo "<input type='image' class='image' src='images/Product/women/".$_SESSION['cart'][$i]['photo']."' alt='Submit' width='300' height='300'>";
-                                    // echo "</form>";
                                     echo "
                                     </td>
                                     <td class='itemDetails' align='left'>
