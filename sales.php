@@ -1,4 +1,4 @@
-<?php //include('mySQLConnect.php'); 
+<?php //include('mySQL.php'); 
     session_start();
     // if user is not logged in, user cannot access this page
     // if (empty($_SESSION['username'])) {

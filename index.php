@@ -1,4 +1,4 @@
-<?php include 'mySQLConnect.php';
+<?php include 'mySQL.php';
 ?>
 <!doctype html>
 <html>

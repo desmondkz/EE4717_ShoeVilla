@@ -1,8 +1,8 @@
 <?php 
-include ('mySQLConnect.php');
+include ('mySQL.php');
 //var_dump($_SESSION['cart']);            
 //var_dump($_SESSION['username']);
-var_dump($_GET);
+// var_dump($_GET);
 
 ?>
 
@@ -206,8 +206,9 @@ var_dump($_GET);
                                     $total = $total + $totalPrice;
                                     echo "<tr class='cartRow'>
                                     <td class='itemImage'>";
-                                    echo "<form action='billing.php' method='get'>";
-                                    echo "<input name='productId' type='number' value='".$_SESSION['cart'][$i]['productId']."' hidden>";
+                                    echo "<form action='billing.php' method='post'>";
+                                    echo "<input name='qty' type='number' value='".$j."' hidden>";
+                                    echo "<input name='productId' type='number' value='".$i."' hidden>";
                                     echo "<input name='price' type='text' value='".$_SESSION['cart'][$i]['price']."' hidden>";
                                     echo "<input name='introduction' type='text' value='".$_SESSION['cart'][$i]['introduction']."' hidden>";
                                     echo "<input name='photo' type='text' value='".$_SESSION['cart'][$i]['photo']."' hidden>";

@@ -22,7 +22,7 @@
             <th>Date</th>
 
             <?php 
-                include 'mySQLConnect.php';
+                include 'mySQL.php';
                 $cmd = "SELECT * FROM orders";
                 $resultss = mysqli_query($conn, $cmd);
 

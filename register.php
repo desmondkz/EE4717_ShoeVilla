@@ -1,5 +1,5 @@
 <?php 
-include('mySQLConnect.php');
+include('mySQL.php');
 ?>
 
 <!DOCTYPE <!DOCTYPE html>

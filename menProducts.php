@@ -27,6 +27,7 @@ echo " <ul class='myProduct'>";
 
 for ($i=0; $i <$num_results; $i++) {
     $row = $result->fetch_assoc();
+    // var_dump($row);
     echo "<li>";
     echo "<div>";
     echo "<form action='productDescription.php' method='get'>";

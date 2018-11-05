@@ -85,10 +85,10 @@
             //$password = $password;
             $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
             $results = mysqli_query($conn, $query);
-
-
             if (mysqli_num_rows($results) == 1) {
+                $row = $results->fetch_assoc();
                 $_SESSION['username'] = $username;
+                $_SESSION['userId'] = $row['id'];
                 header('location: index.php');
             }else {
                 array_push($errors, "Wrong username/password combination or You are not registered.");
@@ -108,7 +108,6 @@
         require ('email.php');
 
         // Receive all input values from billing form
-        var_dump($_POST);
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
         $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
         $address1 = mysqli_real_escape_string($conn, $_POST['address1']);
@@ -124,7 +123,54 @@
         $month = mysqli_real_escape_string($conn, $_POST['month']);
         $year = mysqli_real_escape_string($conn, $_POST['year']);
         $cvv = mysqli_real_escape_string($conn, $_POST['cvv']);
+        
+        $mysql_date_now = date("Y-m-d H:i:s");
+        $total = 0;
+        $userId = $_SESSION['userId'];
+        for ($i=1; $i < 100; $i++){
+            if(!empty($_SESSION['cart'][$i])){
+                for($j=36; $j<42; $j++){
+                    if(!empty($_SESSION['cart'][$i][$j])){
+                        $qty = (int)$_SESSION['cart'][$i][$j];
+                        $price = (int)$_SESSION['cart'][$i]['price'];
+                        $totalPrice = $qty * $price;
+                        $total = $total + $totalPrice;
+                        $size = $j;
+                        $productId =$i;
+                        $price=$_SESSION['cart'][$i]['price'];
+                        $introduction=$_SESSION['cart'][$i]['introduction'];
+                        $photo=$_SESSION['cart'][$i]['photo'];
+                        $name=$_SESSION['cart'][$i]['name'];
+                        $color=$_SESSION['cart'][$i]['color'];
+                        $photo=$_SESSION['cart'][$i]['photo'];
+                        $query="INSERT INTO orders (
+                                            orderid, 
+                                            userId, 
+                                            productId,
+                                            productname,
+                                            color,
+                                            size,
+                                            quantity,
+                                            subtotal,
+                                            datepurchase)
+                                  VALUE (
+                                            NULL,
+                                            '$userId',                                           
+                                            '$productId',
+                                            '$name',
+                                            '$color',
+                                            '$size',
+                                            '$qty',
+                                            '$totalPrice',
+                                            '$mysql_date_now'
+                                            )";
+            mysqli_query($conn, $query);
+                                  }
+                                }
+                            }
+                        }
 
+                        
         // ensure that form fields are filled properly
         if (empty($firstname)) {array_push($errors, "Please fill in you First name");}
         if (empty($lastname)) {array_push($errors, "Please fill in you Last name");}
